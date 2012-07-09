@@ -1,3 +1,9 @@
+.DS_Store
+public/gko/**/*
+public/.htaccess
+config/*.yml
+Capfile
+config/deploy.rb
 *.rbc
 *.sassc
 .sass-cache
