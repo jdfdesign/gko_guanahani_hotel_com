@@ -1,0 +1,57 @@
+<!doctype html>
+<%= render '/shared/html_tag' %>
+<head>
+  <meta charset="utf-8"/>
+  <title><%= @meta_title || site.title %></title>
+  <!-- Set the viewport width to device width for mobile -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="<%= @meta_description %>"/>
+  <meta name="keywords" content="<%= @meta_keywords %>"/>
+  <%= render 'shared/head' %>
+  <%= yield :head %>
+</head>
+
+
+<body id='<%= @body_id %>' class='mobile'>
+<!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+<div class="navbar">
+      <div class="navbar-inner">
+        <div class="container">
+	        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+	        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+	          <span><%= t(:navigation_menu) %><i class="icon-chevron-down icon-white"></i></span>
+	        </a>
+          <%= render 'shared/site_title' %>
+          <h4 id="site-subtitle" class="hide-on-mobile"><%= site.subtitle.html_safe if site.subtitle.present? %></h4>
+		  <!-- Everything you want hidden at 940px or less, place within here -->
+          <div class="nav-collapse collapse">
+             <%= render 'shared/locales_select' %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <div class='container'>
+	<div class='row'>
+		<div class="span12">
+		<%= render "images/shared/carousel", :images => site.sections.named("main").first.images %>
+		</div>
+  	</div>
+	<div class='row'>
+		<div class="span3">
+			<div class="navbar-aside hide-on-print">
+				<nav id="primary-menu" class="primary-menu-container">
+					<%= render 'shared/menu', :sections => site.sections.named("main").first.children.in_menu %>
+				</nav>
+			</div>
+		</div>
+		<div class='span9'>
+			<%= render "shared/flash" %>
+			<%= yield %>
+		</div>
+	</div>
+  </div>
+  <%= render 'shared/footer' %>
+<%= render 'shared/javascripts' %>
+<%= yield :after_javascript_libraries %>
+<body>
+</html>

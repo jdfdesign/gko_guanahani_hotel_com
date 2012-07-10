@@ -1,0 +1,48 @@
+<% if sections.try(:any?) %>
+    <ul class="nav nav-list">
+      <% sections.each do |section| %>
+          <% if section %>
+              <%
+                 style = site.preferred_primary_menu_style
+                 has_dropdown = false
+                 is_dropdown = style == "dropdown"
+                 is_tree = style == "tree"
+                 is_flat = style == "flat"
+                 has_sub_menu = is_dropdown || is_tree
+                 if has_sub_menu
+                   children = section.children.in_menu
+                   has_children = children.try(:any?)
+                   show_contents = section.display_contents_in_menu
+                   if show_contents
+                     contents = Content.with_section(section.id).published.with_translations(I18n.locale).order('contents.position')
+                   end
+                   has_contents = show_contents && contents.try(:any?)
+                   has_dropdown = is_dropdown && (has_children || has_contents)
+                 end
+
+                 li_classes = []
+                 #li_classes << "active" if !section.is_a?(Redirect) and active_url?(url_for([section]))
+                 li_classes << "dropdown" if has_dropdown
+                 li_classes = li_classes.join(" ")
+              %>
+
+              <li id="<%= dom_id(section) %>" class="<%= li_classes unless li_classes.blank? %>">
+                <%= menu_link(section, :dropdown => has_dropdown) -%>
+                <% if has_contents %>
+                    <ul class='unstyled'>
+                      <% contents.each do |content| %>
+                          <li><%= link_to(content.title, url_for([section, content])) %></li>
+                      <% end %>
+                    </ul>
+                <% end %>
+                <% if has_children %>
+                    <ul class="dropdown-menu">
+                      <%= render(:partial => '/shared/menu_branch', :collection => children, :as => 'section') %>
+                    </ul>
+                <% end %>
+              </li>
+          <% end %>
+      <% end %>
+    </ul>
+<% end %> 
+

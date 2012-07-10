@@ -1,2 +1,19 @@
 // Import
-@import "gko_public_all"; 
+@import "gko_public_all";
+/*-----------------------------------------
+ RESPONSIVE
+----------------------------------------- */
+#footer {
+	margin: 32px 0;
+	.nav-list {
+		float: right;
+	}
+	.nav-list > li {
+		float: left;
+	}
+	.nav-list > li > a, .nav-list .nav-header {
+		margin-left: 0;
+		margin-right: 0;
+	}
+}
+@import "twitter/bootstrap/responsive"; 
