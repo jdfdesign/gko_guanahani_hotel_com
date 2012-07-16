@@ -1,19 +1,350 @@
+$orangeDark: #E35E01;
+
+
+// Variables.less
+// Variables to customize the look and feel of Bootstrap
+// -----------------------------------------------------
+
+
+
+// GLOBAL VALUES
+// --------------------------------------------------
+
+// Grays
+// -------------------------
+$black:                 #000;
+$grayDarker:            #222;
+$grayDark:              #808285;
+$gray:                  #555;
+$grayLight:             #999;
+$grayLighter:           #eee;
+$white:                 #F2F1ED;
+
+
+// Accent colors
+// -------------------------
+$blue:                  #049cdb;
+$blueDark:              #0064cd;
+$green:                 #59A9A1;
+$red:                   #9d261d;
+$yellow: #FF9000;
+$orange: #FFAB00;
+$pink:                  #c3325f;
+$purple:                #7a43b6;
+
+
+// Scaffolding
+// -------------------------
+$bodyBackground:        $white;
+$textColor:             $grayDark;
+
+
+// Links
+// -------------------------
+$linkColor:             $green;
+$linkColorHover:        darken($linkColor, 15%);
+
+
+// Typography
+// -------------------------
+$sansFontFamily:        "museo-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$serifFontFamily:       "museo-slab", Georgia, "Times New Roman", Times, serif;
+$monoFontFamily:        Menlo, Monaco, Consolas, "Courier New", monospace;
+
+$baseFontSize:          13px;
+$baseFontFamily:        $sansFontFamily;
+$baseLineHeight:        18px;
+$altFontFamily:         $serifFontFamily;
+
+$headingsFontFamily:    $serifFontFamily; // empty to use BS default, @baseFontFamily
+$headingsFontWeight:    100;    // instead of browser default, bold
+$headingsColor:         $orange; // empty to use BS default, @textColor
+
+
+// Tables
+// -------------------------
+$tableBackground:                   transparent; // overall background-color
+$tableBackgroundAccent:             #f9f9f9; // for striping
+$tableBackgroundHover:              #f5f5f5; // for hover
+$tableBorder:                       #ddd; // table and cell border
+
+
+// Buttons
+// -------------------------
+$btnBackground:                     $white;
+$btnBackgroundHighlight:            darken($white, 10%);
+$btnBorder:                         #ccc;
+
+$btnPrimaryBackground:              $linkColor;
+$btnPrimaryBackgroundHighlight:     adjust-hue($btnPrimaryBackground, 15%);
+
+$btnInfoBackground:                 #5bc0de;
+$btnInfoBackgroundHighlight:        #2f96b4;
+
+$btnSuccessBackground:              #62c462;
+$btnSuccessBackgroundHighlight:     #51a351;
+
+$btnWarningBackground:              lighten($orange, 15%);
+$btnWarningBackgroundHighlight:     $orange;
+
+$btnDangerBackground:               #ee5f5b;
+$btnDangerBackgroundHighlight:      #bd362f;
+
+$btnInverseBackground:              $gray;
+$btnInverseBackgroundHighlight:     $grayDarker;
+
+
+// Forms
+// -------------------------
+$inputBackground:               $white;
+$inputBorder:                   #ccc;
+$inputBorderRadius:             3px;
+$inputDisabledBackground:       $grayLighter;
+
+$formActionsBackground:         #f5f5f5;
+
+// Dropdowns
+// -------------------------
+$dropdownBackground:            $orange;
+$dropdownBorder:                rgba(0,0,0,.2);
+$dropdownLinkColor:             $white;
+$dropdownLinkColorHover:        $white;
+$dropdownLinkBackgroundHover:   $orangeDark;
+$dropdownDividerTop:            $orangeDark;
+$dropdownDividerBottom:         $white;
+
+// COMPONENT VARIABLES
+// --------------------------------------------------
+
+// Input placeholder text color
+// -------------------------
+$placeholderText:       $grayLight;
+
+
+// Hr border color
+// -------------------------
+$hrBorder:              $grayLighter;
+
+// Navbar
+// -------------------------
+$navbarHeight:                    40px;
+$navbarBackground:                $grayDarker;
+$navbarBackgroundHighlight:       $grayDark;
+
+$navbarText:                      $grayLight;
+$navbarLinkColor:                 $grayLight;
+$navbarLinkColorHover:            $white;
+$navbarLinkColorActive:           $navbarLinkColorHover;
+$navbarLinkBackgroundHover:       transparent;
+$navbarLinkBackgroundActive:      $navbarBackground;
+
+$navbarSearchBackground:          lighten($navbarBackground, 25%);
+$navbarSearchBackgroundFocus:     $white;
+$navbarSearchBorder:              darken($navbarSearchBackground, 30%);
+$navbarSearchPlaceholderColor:    #ccc;
+$navbarBrandColor:                $navbarLinkColor;
+
+
+// Hero unit
+// -------------------------
+$heroUnitBackground:              $grayLighter;
+$heroUnitHeadingColor:            inherit;
+$heroUnitLeadColor:               inherit;
+
+
+// Form states and alerts
+// -------------------------
+$warningText:             #c09853;
+$warningBackground:       #fcf8e3;
+$warningBorder:           darken(adjust_hue($warningBackground, -10deg), 3%);
+
+$errorText:               #b94a48;
+$errorBackground:         #f2dede;
+$errorBorder:             darken(adjust_hue($errorBackground, -10deg), 3%);
+
+$successText:             #468847;
+$successBackground:       #dff0d8;
+$successBorder:           darken(adjust_hue($successBackground, -10deg), 5%);
+
+$infoText:                #3a87ad;
+$infoBackground:          #d9edf7;
+$infoBorder:              darken(adjust_hue($infoBackground, -10deg), 7%);
+
+
 // Import
-@import "gko_public_all";
+@import "twitter/bootstrap";
+@import "galleria";
+/*-----------------------------------------
+ GALLERIA
+----------------------------------------- */
+.galleria-container {
+	background: none;
+}
+/*-----------------------------------------
+ LAYOUT
+----------------------------------------- */
+body {
+//	font-weight: 100;
+}
+// Links
+a {
+  .text {
+    display: inline-block;
+  }
+}
+.wrapper {
+	max-width: 1025px;
+	@include box-sizing(border-box);
+	@include box-shadow(1px 0 14px rgba(0,0,0,.4));
+	@include center-block();
+}
+.container-fluid {
+	padding: 10px;
+	background-color: #fff;
+}
+.btn-navbar {
+  display: none;
+  padding: 7px 10px;
+}
+header {
+	.btn-navbar {
+	  float: right;
+	  margin-left: 5px;
+	  margin-right: 5px;
+	  @include buttonBackground($navbarBackgroundHighlight, $navbarBackground);
+	  @include box-shadow("inset 0 1px 0 rgba(255,255,255,.1), 0 1px 0 rgba(255,255,255,.075)");
+	}
+	// Website or project name
+  .brand {
+	position: absolute;
+	z-index: 10000;
+	float: left;
+	display: block;
+	@include hide-text;
+	@include box-sizing(border-box);
+	padding: 12px;
+	width: 231px;
+	height: 150px;
+	background: #fff image-url("logo.gif") 0 0 no-repeat;
+	background-size: contain;
+	background-color: rgba(255,255,255,.95);
+	cursor: pointer;
+	a {
+		text-decoration: none;
+		display: block;
+		width: 100%;
+		height: 100%;
+	}
+  }
+	.nav {
+		float: right;
+		margin-bottom: 0;
+	}
+	.nav > li {
+		display: block;
+		float: left;
+	}
+	.nav > li > a {
+		float: none;
+		padding: 9px 10px 11px;
+		line-height: 19px;
+		font-size: 11px;
+		text-decoration: none;
+		text-transform: uppercase;
+		text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+	}
+}
+
+#primary-menu {
+	
+	.nav > li {
+		margin-top: 1px;
+	}
+	.nav > li > a {
+		padding: 6px 15px;
+		background-color: $orange;
+		color: $white;
+		font-size: 16px;
+		line-height: 27px;
+		@include transition(background-color .5s linear);
+		
+		&:hover {
+			text-decoration: none;
+			background-color: $orangeDark;
+		}
+	}
+	.caret {
+		content: "";
+		border: none;
+		margin-top: 0;
+		margin-left: 8px;
+		opacity: 1;
+		&:before {
+			content: "\2192";
+		};
+	}
+	.dropdown-menu li > a {
+		//font-weight: 100;
+	}
+	
+}
+
+#footer {
+	margin: 32px 0;
+	color: #939598;
+	.nav {
+		float: right;
+	}
+	.nav > li {
+		display: block;
+		float: left;
+	}
+	.nav > li > a {
+		float: none;
+		padding: 9px 10px 11px;
+		line-height: 19px;
+		text-decoration: none;
+		text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+	}
+}
+.main-content {
+	background-color: $white;
+	padding: 0 24px 24px 24px;
+}
+.container-fluid#main-container {
+	padding-top: 0;
+}
+.modal#virtual-tour-modal {
+	width: 834px;
+	margin-left: -417px;
+}
+.modal-body {
+	max-height: 480px;
+}
 /*-----------------------------------------
  RESPONSIVE
 ----------------------------------------- */
-#footer {
-	margin: 32px 0;
-	.nav-list {
-		float: right;
+@import "twitter/bootstrap/responsive"; 
+
+@media (max-width: 979px) {
+	.nav-collapse .dropdown-menu {
+	//	display: none;
 	}
-	.nav-list > li {
-		float: left;
+	.btn-navbar {
+		display: block;	
 	}
-	.nav-list > li > a, .nav-list .nav-header {
-		margin-left: 0;
-		margin-right: 0;
+	.hide-on-mobile {
+		display: none;
 	}
 }
-@import "twitter/bootstrap/responsive"; 
+
+@media (min-width: 980px) {
+	#primary-menu {
+		@include box-shadow(2px 2px 12px rgba(0,0,0,.2));
+	}
+	.dropdown-menu {
+		top: 0;
+		left: 100%;
+		
+	}
+}
