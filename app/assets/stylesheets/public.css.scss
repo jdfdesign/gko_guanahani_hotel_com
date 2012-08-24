@@ -192,7 +192,7 @@ a {
     display: inline-block;
   }
 }
-.wrapper {
+#wrapper-wide-body {
 	max-width: 1025px;
 	@include box-sizing(border-box);
 	@include box-shadow(1px 0 14px rgba(0,0,0,.4));

@@ -15,7 +15,10 @@ RAILS_ENV=production bundle exec rake assets:precompile
 RAILS_ENV=development bundle exec rake assets:precompile 
 bundle exec rake assets:precompile
 
+cd ~/Github/gko_guanahani_hotel_com
 bundle exec rake railties:install:migrations
+rake db:migrate
+
 bundle exec rake db:bootstrap
 
 bundle exec rake db:master:create
