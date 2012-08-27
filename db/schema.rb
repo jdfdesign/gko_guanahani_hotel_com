@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120824172571) do
+ActiveRecord::Schema.define(:version => 20120827221232) do
 
   create_table "accounts", :force => true do |t|
     t.string   "reference",  :limit => 40
@@ -22,6 +22,20 @@ ActiveRecord::Schema.define(:version => 20120824172571) do
     t.datetime "created_at",               :null => false
     t.datetime "updated_at",               :null => false
   end
+
+  create_table "assets", :force => true do |t|
+    t.integer  "site_id"
+    t.string   "content_type"
+    t.integer  "width"
+    t.integer  "height"
+    t.integer  "size"
+    t.string   "source"
+    t.string   "source_filename"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
+
+  add_index "assets", ["site_id"], :name => "index_assets_on_site_id"
 
   create_table "configurations", :force => true do |t|
     t.integer  "site_id"
@@ -149,18 +163,6 @@ ActiveRecord::Schema.define(:version => 20120824172571) do
     t.string   "document_ext"
   end
 
-  create_table "element_assignments", :force => true do |t|
-    t.integer  "position",                      :default => 1, :null => false
-    t.integer  "content_id",                                   :null => false
-    t.integer  "attachable_id",                                :null => false
-    t.string   "attachable_type", :limit => 40,                :null => false
-    t.datetime "created_at",                                   :null => false
-    t.datetime "updated_at",                                   :null => false
-  end
-
-  add_index "element_assignments", ["attachable_id", "attachable_type"], :name => "index_element_assignments_on_attachable_id_and_attachable_type"
-  add_index "element_assignments", ["content_id"], :name => "index_element_assignments_on_content_id"
-
   create_table "element_images", :id => false, :force => true do |t|
     t.integer  "site_id"
     t.integer  "section_id"
@@ -176,22 +178,6 @@ ActiveRecord::Schema.define(:version => 20120824172571) do
   add_index "element_images", ["image_id"], :name => "index_element_images_on_image_id"
   add_index "element_images", ["section_id"], :name => "index_element_images_on_section_id"
   add_index "element_images", ["site_id"], :name => "index_element_images_on_site_id"
-
-  create_table "element_text_translations", :force => true do |t|
-    t.integer  "element_text_id"
-    t.string   "locale"
-    t.text     "body"
-    t.text     "body_plain"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
-  end
-
-  add_index "element_text_translations", ["element_text_id"], :name => "index_element_text_translations_on_element_text_id"
-
-  create_table "element_texts", :force => true do |t|
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
 
   create_table "field_types", :force => true do |t|
     t.string   "name"
