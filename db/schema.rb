@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120827221232) do
+ActiveRecord::Schema.define(:version => 20120912170903) do
 
   create_table "accounts", :force => true do |t|
     t.string   "reference",  :limit => 40
@@ -275,8 +275,10 @@ ActiveRecord::Schema.define(:version => 20120827221232) do
     t.boolean  "default",      :default => false
     t.datetime "created_at",                      :null => false
     t.datetime "updated_at",                      :null => false
+    t.integer  "position",     :default => 1
   end
 
+  add_index "languages", ["site_id", "position"], :name => "index_languages_on_site_id_and_position"
   add_index "languages", ["site_id"], :name => "index_languages_on_site_id"
 
   create_table "liquid_models", :force => true do |t|
@@ -287,14 +289,6 @@ ActiveRecord::Schema.define(:version => 20120827221232) do
     t.string   "locale"
     t.string   "handler"
     t.boolean  "partial",    :default => false
-    t.datetime "created_at",                    :null => false
-    t.datetime "updated_at",                    :null => false
-  end
-
-  create_table "mail_methods", :force => true do |t|
-    t.integer  "site_id"
-    t.string   "environment"
-    t.boolean  "active",      :default => true
     t.datetime "created_at",                    :null => false
     t.datetime "updated_at",                    :null => false
   end
@@ -381,8 +375,6 @@ ActiveRecord::Schema.define(:version => 20120827221232) do
     t.integer  "rgt"
     t.string   "type"
     t.string   "name"
-    t.string   "slug"
-    t.string   "path"
     t.text     "options"
     t.string   "title"
     t.string   "layout"
@@ -400,6 +392,8 @@ ActiveRecord::Schema.define(:version => 20120827221232) do
     t.boolean  "robot_follow",      :default => true
     t.boolean  "locked",            :default => false
     t.integer  "locked_by"
+    t.string   "slug"
+    t.string   "path"
   end
 
   add_index "sections", ["link_id", "link_type"], :name => "index_sections_on_link_id_and_link_type"
@@ -447,6 +441,7 @@ ActiveRecord::Schema.define(:version => 20120827221232) do
     t.string   "default_image_uid"
     t.integer  "site_registrations_count", :default => 0
     t.integer  "languages_count",          :default => 0
+    t.datetime "liquid_models_updated_at"
   end
 
   add_index "sites", ["host"], :name => "index_sites_on_host", :unique => true
