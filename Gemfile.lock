@@ -1,12 +1,12 @@
 GIT
   remote: git@github.com:jdfdesign/gko_cms3.git
-  revision: 0e8abf5b144fbd263fd6e0161c742da613f3b548
+  revision: 95864a94247edfce9fe30f4b996dbfe118a67acf
   specs:
-    gko_albums (0.4.03)
-    gko_auth (0.4.03)
+    gko_albums (0.4.08)
+    gko_auth (0.4.08)
       cancan (= 1.6.8)
       devise (= 2.1.2)
-    gko_core (0.4.03)
+    gko_core (0.4.08)
       RedCloth (= 4.2.9)
       activesupport-slices (= 0.0.2)
       acts_as_indexed (~> 0.7.7)
@@ -45,11 +45,11 @@ GIT
       uglifier (>= 1.0.3)
       uuid (= 2.3.5)
       will_paginate (~> 3.0.2)
-    gko_documents (0.4.03)
+    gko_documents (0.4.08)
       dragonfly (~> 0.9.8)
       rack-cache (>= 0.5.3)
-    gko_images (0.4.03)
-    gko_inquiries (0.4.03)
+    gko_images (0.4.08)
+    gko_inquiries (0.4.08)
       filters_spam (~> 0.2)
 
 GEM
@@ -93,7 +93,7 @@ GEM
     bcrypt-ruby (3.0.1)
     builder (3.0.0)
     cancan (1.6.8)
-    capistrano (2.13.3)
+    capistrano (2.13.4)
       highline
       net-scp (>= 1.0.0)
       net-sftp (>= 2.0.0)
@@ -157,6 +157,7 @@ GEM
     jquery-rails (2.0.3)
       railties (>= 3.1.0, < 5.0)
       thor (~> 0.14)
+    jruby-pageant (1.1.1)
     json (1.6.6)
     launchy (2.1.2)
       addressable (~> 2.3)
@@ -178,7 +179,8 @@ GEM
       net-ssh (>= 1.99.1)
     net-sftp (2.0.5)
       net-ssh (>= 2.0.9)
-    net-ssh (2.5.2)
+    net-ssh (2.6.0)
+      jruby-pageant (>= 1.1.1)
     net-ssh-gateway (1.1.0)
       net-ssh (>= 1.99.1)
     nokogiri (1.5.5)
@@ -215,7 +217,7 @@ GEM
     rake (0.9.2.2)
     rdoc (3.12)
       json (~> 1.4)
-    responders (0.9.2)
+    responders (0.9.3)
       railties (~> 3.1)
     rmagick (2.13.1)
     routing-filter (0.3.1)
@@ -256,12 +258,12 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-rails (~> 3.2.2)
-  gko_albums (= 0.4.03)!
-  gko_auth (= 0.4.03)!
-  gko_core (= 0.4.03)!
-  gko_documents (= 0.4.03)!
-  gko_images (= 0.4.03)!
-  gko_inquiries (= 0.4.03)!
+  gko_albums (= 0.4.08)!
+  gko_auth (= 0.4.08)!
+  gko_core (= 0.4.08)!
+  gko_documents (= 0.4.08)!
+  gko_images (= 0.4.08)!
+  gko_inquiries (= 0.4.08)!
   iconv
   sass-rails (~> 3.2.5)
   uglifier (>= 1.0.3)
