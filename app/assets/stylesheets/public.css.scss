@@ -1,5 +1,8 @@
 $orangeDark: #E35E01;
-
+$customGreen: #64edd9;
+$customGreenDark: #5fdac8;
+$customPurple: #c1b6f9;
+$customPurpleDark: #aaa3d5;
 
 // Variables.less
 // Variables to customize the look and feel of Bootstrap
@@ -170,9 +173,22 @@ $infoText:                #3a87ad;
 $infoBackground:          #d9edf7;
 $infoBorder:              darken(adjust_hue($infoBackground, -10deg), 7%);
 
+// Navbar (gko addon)
+// -------------------------
+$navbarLinkBackground:            transparent;	
+// Footer (gko addon)
+// -------------------------
+$footerHeight:                    40px;// !default;
+$footerBackground:                transparent;// !default;
+$footerText:                      $navbarText;// !default;
+$footerLinkColor:                 $navbarLinkColor;// !default;
+$footerLinkBackground:       	  $navbarLinkBackground;// !default;
+$footerLinkColorHover:            $navbarLinkColorHover;// !default;
+$footerLinkBackgroundHover:       $navbarLinkBackgroundHover;// !default;
 
 // Import
 @import "twitter/bootstrap";
+@import "gko/public/base";
 @import "galleria";
 /*-----------------------------------------
  GALLERIA
@@ -186,21 +202,17 @@ $infoBorder:              darken(adjust_hue($infoBackground, -10deg), 7%);
 body {
 //	font-weight: 100;
 }
-// Links
-a {
-  .text {
-    display: inline-block;
-  }
-}
+
 #wrapper-wide-body {
 	max-width: 1025px;
 	@include box-sizing(border-box);
 	@include box-shadow(1px 0 14px rgba(0,0,0,.4));
 	@include center-block();
+	background-color: #fff;
 }
 .container-fluid {
 	padding: 10px;
-	background-color: #fff;
+	
 }
 .btn-navbar {
   display: none;
@@ -227,7 +239,7 @@ header {
 	height: 150px;
 	background: #fff image-url("logo.gif") 0 0 no-repeat;
 	background-size: contain;
-	background-color: rgba(255,255,255,.95);
+	background-color: rgba(255,255,255,1);
 	cursor: pointer;
 	a {
 		text-decoration: none;
@@ -273,6 +285,31 @@ header {
 			background-color: $orangeDark;
 		}
 	}
+	.nav .dropdown-menu {
+		@include border-radius(0);
+	}
+	.nav li.green a,
+	.nav li.green + ul > li,
+	.nav li.green + ul > li > a {
+		background-color: $customGreenDark;
+		&:hover {
+			background-color: $customGreen;
+		}
+	}
+	.nav li.green .dropdown-menu {
+		background-color: $customGreenDark;
+	}
+	.nav li.purple a,
+	.nav li.purple + ul > li,
+	.nav li.purple + ul > li > a {
+		background-color: $customPurpleDark;
+		&:hover {
+			background-color: $customPurple;
+		}
+	}
+	.nav li.purple .dropdown-menu {
+		background-color: $customPurpleDark;
+	}
 	.caret {
 		content: "";
 		border: none;
@@ -289,30 +326,83 @@ header {
 	
 }
 
+#footer-container,
+#copyright-container {
+max-width: 1025px;	
+@include center-block;
+}
+
 #footer {
 	margin: 32px 0;
 	color: #939598;
+	h3 {
+		color: $grayDark;
+	}
+	.span3 {
+		border-left: 1px solid #fff;
+		padding: 0 20px;
+		min-height: 300px;
+		width: 25%;
+		margin: 0;
+	}
 	.nav {
-		float: right;
+		float: left;
+		
 	}
 	.nav > li {
 		display: block;
+		float: none;
+	}
+	.nav > li > a {
+		float: none;
+		padding: 4px 10px 4px 0px;
+		line-height: 14px;
+		text-decoration: none;
+		text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+		color: $textColor;
+		&:hover {
+			color: $grayDarker;
+			background-color: transparent;
+		};
+	}
+}
+
+#copyright {
+	margin: 32px 0;
+	color: #939598;
+	.nav {
 		float: left;
+		
+	}
+	.nav > li {
+		display: block;
+		float: right;
 	}
 	.nav > li > a {
 		float: none;
 		padding: 9px 10px 11px;
-		line-height: 19px;
+		line-height: 14px;
 		text-decoration: none;
 		text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+		font-size: 10px;
 	}
+}
+#site_by {
+	float:right;
+	font-size: 10px;
+	line-height: 14px;
 }
 .main-content {
 	background-color: $white;
-	padding: 0 24px 24px 24px;
+	padding: 24px;
+	min-height: 320px;
 }
 .container-fluid#main-container {
 	padding-top: 0;
+}
+.modal#modal-gallery {
+	width: 834px;
+	margin-left: -417px;
 }
 .modal#virtual-tour-modal {
 	width: 834px;
@@ -321,10 +411,27 @@ header {
 .modal-body {
 	max-height: 480px;
 }
+#book-online-btn {
+	@include buttonBackground($customGreen, $customGreenDark);
+	color: $white;
+	text-shadow: none;
+	text-transform: capitalize;
+}
+#virtual-tours-btn {
+	@include buttonBackground($customPurple, $customPurpleDark);
+	color: $white;
+	text-shadow: none;
+	text-transform: capitalize;
+}
+#locales-btn,
+#locales a {
+	text-transform: capitalize;
+}
 /*-----------------------------------------
  RESPONSIVE
 ----------------------------------------- */
-@import "twitter/bootstrap/responsive"; 
+@import "twitter/bootstrap/responsive";
+@import "gko/default_responsive";
 
 @media (max-width: 979px) {
 	.nav-collapse .dropdown-menu {

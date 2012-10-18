@@ -1,0 +1,73 @@
+<%= render_page_title(resource.title) %>
+<%= render_html_text(resource.body) %>
+<%
+	sections = [
+		{:title => "Admiral suite",
+		 :video => "admiral-suite" },
+		
+		{:title => "Beach house",
+		 :video => "beach-house" },
+		
+		{:title => "Garden 1 bedroom suites",
+		 :video => "garden-1-bedroom-suites" },
+		{:title => "Garden 1 bedroom suites 2",
+		 :video => "garden-1-bedroom-suites2" },
+		{:title => "Garden house",
+		 :video => "garden-house" },
+		{:title => "La villa",
+		 :video => "la-villa" },
+		{:title => "Marigot suite",
+		 :video => "marigot-suite" },
+		{:title => "Ocean 1 bedroom pool suites",
+		 :video => "ocean-1-bedroom-pool-suites" },
+		{:title => "Ocean 1 bedroom suites",
+		 :video => "ocean-1-bedroom-suites" },
+		{:title => "Ocean 1 bedroom suites 2",
+		 :video => "ocean-1-bedroom-suites2" },
+		{:title => "Ocean 1 bedroom suites 3",
+		 :video => "ocean-1-bedroom-suites3" },
+		{:title => "Ocean view rooms",
+		 :video => "ocean-view-rooms" },
+		{:title => "Ocean view rooms 2",
+		 :video => "ocean-view-rooms2" },
+		{:title => "Ocean view rooms 3",
+		 :video => "ocean-view-rooms3" },
+		{:title => "Pelican suite",
+		 :video => "pelican-suite" },
+		{:title => "Serenity suite",
+		 :video => "serenity-suite" },
+		{:title => "Wellness suite",
+		 :video => "wellness-suite" },
+		{:title => "Indigo",
+		 :video => "indigo" },
+		{:title => "Indigo on the beach",
+		 :video => "indigo-on-the-beach" },
+		{:title => "Bartolomeo",
+		 :video => "bartolomeo" },
+		{:title => "Beach bar",
+		 :video => "beach-bar" },
+		{:title => "Concierge",
+		 :video => "concierge" },
+		{:title => "Spa",
+		 :video => "spa" }
+	]
+%>
+
+<% sections.in_groups_of(2) do |section_group| %>
+<div class="row-fluid">
+	<ul class="thumbnails">
+		<% section_group.each do |section| %>
+		<% if section %>
+		<li class="span6">
+		<div class="thumbnail">
+			<%= link_to(image_tag("/assets/#{section[:video]}.jpg"), "/assets/#{section[:video]}.mov", :class => "virtual-tour") %>
+			<div class="caption">
+				<h3><%= section[:title] %></h3>
+			</div>
+		</div>
+		</li>
+		<% end %>
+		<% end %>
+	</ul>
+</div>
+<% end %>

@@ -1,0 +1,31 @@
+<!-- Footer
+================================================== -->
+ <footer id='footer-container' class='container-fluid hide-on-print'>
+   <div id='footer' class='row-fluid'>
+     <div class="span3 footer-content">
+	    <h3><%= t(:'titles.pro')%></h3>
+		<%= render_menu('pipe') %>
+	 </div>
+     <div class="span3 footer-content">
+		<h3><%= t(:'titles.tools')%></h3>
+		<%= render_menu('tools') %></div>
+     <div class="span3 footer-content">
+		<h3><%= t(:'titles.contact')%></h3>
+		<p><%= site.preferred_contact_address.html_safe if site.preferred_contact_address.presence %></p>
+		
+		<p><%= link_to(image_tag("fb.png"), "http://www.facebook.com/HotelGuanahani", :target => :blank)%></p>
+		<p><%= link_to(image_tag("tw.png"), "http://twitter.com/HotelGuanahani", :target => :blank)%></p>
+		
+	 </div> 
+     <div class="span3 footer-content">
+        <img src='/assets/leading-hotel-logo.jpg' class="hide-on-mobile">
+		<div id="TA_certificateOfExcellence63" class="TA_certificateOfExcellence">
+		<ul id="9stbAU" class="TA_links q0ssgAsg">
+		<li id="Zvy1Fk4wS" class="VWTSdeQrAI"><a href=http://www.tripadvisor.com/Hotel_Review-g147341-d184612-Reviews-Hotel_Guanahani_Spa-Grand_Cul_de_Sac_St_Barthelemy.html>Hotel Guanahani & Spa</a></li>
+		</ul>
+		</div>
+		<script src="http://www.jscache.com/wejs?wtype=certificateOfExcellence&amp;uniq=63&amp;locationId=184612&amp;lang=en_US&amp;year=2012"></script>
+
+	</div>
+   </div>
+ </footer>

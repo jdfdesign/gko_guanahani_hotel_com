@@ -1,11 +1,5 @@
-<%= page_title(resource.title) unless resource.home? %>
-<% if resource.body.present? %>
-    <div class="page_content">
-      <%= resource_body_tag do %>
-          <%= render_html_text(resource.body) %>
-      <% end %>
-    </div>
-<% end %>
+<%= render_page_title(resource.title) %>
+<%= render_html_text(resource.body) %>
 <%
 	sections = begin
 		if resource.children.try(:any?)
@@ -18,22 +12,24 @@
 <% if sections.try(:any?) %>
 	<% sections.in_groups_of(2) do |section_group| %>
 	<div class="row-fluid">
+		<ul class="thumbnails">
 		<% section_group.each do |section| %>
-		<div class="span6">
+		<li class="span6">
+		<div class="thumbnail">
 			<% if section %>
-				
+			
+			<%= link_to(image_fu(section.thumbnail, "670x"), url_for([section]), :class => "remote-diaporama", :remote => true ) if section.images.any? %>
+			<div class="caption">
 				<h3><%= section.title.html_safe %></h3>
-				<% if section.images.any? %>
-					<%= link_to(image_fu(section.thumbnail, "670x"), url_for([section]), :class => "remote-diaporama", :remote => true ) %>
-				<% end %>
-				<%= render_html_text(section.body) %>
-				<% if section.images.any? %>
-					<%= link_to("Voir le diaporama".html_safe, url_for([section]), :class => "remote-diaporama", :remote => true )%>
-				<% end %>
-				<%= link_to("Voir la visite".html_safe, "/assets/garden-1-bedroom-suites.mov", :class => "virtual-tour" )%>
+				<p><%= render_html_text(section.body) %></p>
+				<p><%= link_to(t(:"view_diaporama"), url_for([section]), :class => "btn remote-diaporama", :remote => true ) if section.images.any?%>
+				<%= link_to(t(:"view_virtual_visit"), "/assets/garden-1-bedroom-suites.mov", :class => "btn virtual-tour" )%></p>
+			</div>
 			<% end %>
 		</div>
+		</li>
 		<% end %>
+		</ul>
 	</div>
 	<% end %>
 <% end %>

@@ -1,0 +1,13 @@
+<% if site.frontend_translated? %>
+		<a class="btn btn-large dropdown-toggle" data-toggle="dropdown" href="#" id="locales-btn">
+			<%= current_language.presentation %>
+			<span class="caret"></span>
+		</a>
+      <ul id='locales' class="dropdown-menu">
+        <% site.available_locales.each do |language| %>
+            <% unless current_locale?(language.code) %>
+                <li><%= link_to(language.presentation, root_url(:locale => language.code), :class => [language.code.to_s, 'navbar-link']) %></li>
+            <% end %>
+        <% end %>
+      </ul>
+<% end %>

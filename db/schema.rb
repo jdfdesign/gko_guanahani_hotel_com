@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120912170903) do
+ActiveRecord::Schema.define(:version => 20121009114508) do
 
   create_table "accounts", :force => true do |t|
     t.string   "reference",  :limit => 40
@@ -375,6 +375,8 @@ ActiveRecord::Schema.define(:version => 20120912170903) do
     t.integer  "rgt"
     t.string   "type"
     t.string   "name"
+    t.string   "slug"
+    t.string   "path"
     t.text     "options"
     t.string   "title"
     t.string   "layout"
@@ -390,10 +392,7 @@ ActiveRecord::Schema.define(:version => 20120912170903) do
     t.boolean  "shallow_permalink", :default => true
     t.boolean  "robot_index",       :default => true
     t.boolean  "robot_follow",      :default => true
-    t.boolean  "locked",            :default => false
-    t.integer  "locked_by"
-    t.string   "slug"
-    t.string   "path"
+    t.string   "password"
   end
 
   add_index "sections", ["link_id", "link_type"], :name => "index_sections_on_link_id_and_link_type"
@@ -442,6 +441,7 @@ ActiveRecord::Schema.define(:version => 20120912170903) do
     t.integer  "site_registrations_count", :default => 0
     t.integer  "languages_count",          :default => 0
     t.datetime "liquid_models_updated_at"
+    t.text     "page_types"
   end
 
   add_index "sites", ["host"], :name => "index_sites_on_host", :unique => true

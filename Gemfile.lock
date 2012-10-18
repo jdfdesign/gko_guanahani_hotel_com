@@ -1,12 +1,12 @@
 GIT
   remote: git@github.com:jdfdesign/gko_cms3.git
-  revision: 95864a94247edfce9fe30f4b996dbfe118a67acf
+  revision: 90dbacc1db6709eaab10262e08968eb17675e055
   specs:
-    gko_albums (0.4.08)
-    gko_auth (0.4.08)
+    gko_albums (0.4.19)
+    gko_auth (0.4.19)
       cancan (= 1.6.8)
       devise (= 2.1.2)
-    gko_core (0.4.08)
+    gko_core (0.4.19)
       RedCloth (= 4.2.9)
       activesupport-slices (= 0.0.2)
       acts_as_indexed (~> 0.7.7)
@@ -45,11 +45,11 @@ GIT
       uglifier (>= 1.0.3)
       uuid (= 2.3.5)
       will_paginate (~> 3.0.2)
-    gko_documents (0.4.08)
+    gko_documents (0.4.19)
       dragonfly (~> 0.9.8)
       rack-cache (>= 0.5.3)
-    gko_images (0.4.08)
-    gko_inquiries (0.4.08)
+    gko_images (0.4.19)
+    gko_inquiries (0.4.19)
       filters_spam (~> 0.2)
 
 GEM
@@ -102,7 +102,7 @@ GEM
     carrierwave (0.6.2)
       activemodel (>= 3.2.0)
       activesupport (>= 3.2.0)
-    codemirror-rails (2.33)
+    codemirror-rails (2.34)
       railties (~> 3.0)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
@@ -161,8 +161,8 @@ GEM
     json (1.6.6)
     launchy (2.1.2)
       addressable (~> 2.3)
-    letter_opener (0.0.2)
-      launchy
+    letter_opener (1.0.0)
+      launchy (>= 2.0.4)
     macaddr (1.6.1)
       systemu (~> 2.5.0)
     mail (2.4.4)
@@ -239,7 +239,7 @@ GEM
     term-ansicolor (1.0.7)
     thor (0.14.6)
     tilt (1.3.3)
-    treetop (1.4.10)
+    treetop (1.4.11)
       polyglot
       polyglot (>= 0.3.1)
     truncate_html (0.5.5)
@@ -258,12 +258,12 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-rails (~> 3.2.2)
-  gko_albums (= 0.4.08)!
-  gko_auth (= 0.4.08)!
-  gko_core (= 0.4.08)!
-  gko_documents (= 0.4.08)!
-  gko_images (= 0.4.08)!
-  gko_inquiries (= 0.4.08)!
+  gko_albums (= 0.4.19)!
+  gko_auth (= 0.4.19)!
+  gko_core (= 0.4.19)!
+  gko_documents (= 0.4.19)!
+  gko_images (= 0.4.19)!
+  gko_inquiries (= 0.4.19)!
   iconv
   sass-rails (~> 3.2.5)
   uglifier (>= 1.0.3)

@@ -3,7 +3,9 @@
  * Copyright (c) 2010, Aino
  * Licensed under the MIT license.
  */
-
+.galleria {
+    z-index: 1;
+}
 .galleria-container {
     position: relative;
     overflow: hidden;
