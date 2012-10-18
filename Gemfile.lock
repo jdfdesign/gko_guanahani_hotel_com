@@ -1,12 +1,12 @@
 GIT
   remote: git@github.com:jdfdesign/gko_cms3.git
-  revision: 90dbacc1db6709eaab10262e08968eb17675e055
+  revision: 9799514de3e2e96bc27d8113e43ef581c928dbfc
   specs:
-    gko_albums (0.4.19)
-    gko_auth (0.4.19)
+    gko_albums (0.4.20)
+    gko_auth (0.4.20)
       cancan (= 1.6.8)
       devise (= 2.1.2)
-    gko_core (0.4.19)
+    gko_core (0.4.20)
       RedCloth (= 4.2.9)
       activesupport-slices (= 0.0.2)
       acts_as_indexed (~> 0.7.7)
@@ -45,11 +45,11 @@ GIT
       uglifier (>= 1.0.3)
       uuid (= 2.3.5)
       will_paginate (~> 3.0.2)
-    gko_documents (0.4.19)
+    gko_documents (0.4.20)
       dragonfly (~> 0.9.8)
       rack-cache (>= 0.5.3)
-    gko_images (0.4.19)
-    gko_inquiries (0.4.19)
+    gko_images (0.4.20)
+    gko_inquiries (0.4.20)
       filters_spam (~> 0.2)
 
 GEM
@@ -157,7 +157,6 @@ GEM
     jquery-rails (2.0.3)
       railties (>= 3.1.0, < 5.0)
       thor (~> 0.14)
-    jruby-pageant (1.1.1)
     json (1.6.6)
     launchy (2.1.2)
       addressable (~> 2.3)
@@ -179,8 +178,7 @@ GEM
       net-ssh (>= 1.99.1)
     net-sftp (2.0.5)
       net-ssh (>= 2.0.9)
-    net-ssh (2.6.0)
-      jruby-pageant (>= 1.1.1)
+    net-ssh (2.6.1)
     net-ssh-gateway (1.1.0)
       net-ssh (>= 1.99.1)
     nokogiri (1.5.5)
@@ -258,12 +256,12 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-rails (~> 3.2.2)
-  gko_albums (= 0.4.19)!
-  gko_auth (= 0.4.19)!
-  gko_core (= 0.4.19)!
-  gko_documents (= 0.4.19)!
-  gko_images (= 0.4.19)!
-  gko_inquiries (= 0.4.19)!
+  gko_albums (= 0.4.20)!
+  gko_auth (= 0.4.20)!
+  gko_core (= 0.4.20)!
+  gko_documents (= 0.4.20)!
+  gko_images (= 0.4.20)!
+  gko_inquiries (= 0.4.20)!
   iconv
   sass-rails (~> 3.2.5)
   uglifier (>= 1.0.3)
