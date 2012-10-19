@@ -1,6 +1,4 @@
 .DS_Store
-public/gko/**/*
-public/.htaccess
 config/*.yml
 Capfile
 config/deploy.rb
@@ -14,7 +12,10 @@ capybara-*.html
 /log/*
 /tmp/*
 /db/*.sqlite3
-/public/system/*
+/public/system/**/*
+/public/uploads/**/*
+public/gko/**/*
+public/.htaccess
 /coverage/
 /spec/tmp/*
 **.orig
