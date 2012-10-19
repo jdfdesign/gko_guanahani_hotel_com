@@ -49,6 +49,7 @@ GIT
     gko_documents (0.4.21)
       dragonfly (~> 0.9.8)
       rack-cache (>= 0.5.3)
+    gko_image_bank (0.4.21)
     gko_images (0.4.21)
     gko_inquiries (0.4.21)
       filters_spam (~> 0.2)
@@ -262,6 +263,7 @@ DEPENDENCIES
   gko_categories (= 0.4.21)!
   gko_core (= 0.4.21)!
   gko_documents (= 0.4.21)!
+  gko_image_bank (= 0.4.21)!
   gko_images (= 0.4.21)!
   gko_inquiries (= 0.4.21)!
   iconv

@@ -18,6 +18,7 @@ group :production do
 	gem 'gko_documents', prod_version, :git => prod_location
 	gem 'gko_inquiries', prod_version, :git => prod_location
   gem 'gko_categories', prod_version, :git => prod_location
+  gem 'gko_image_bank', prod_version, :git => prod_location
 end
 #group :development do
 #	gem "gko_core", :path => File.expand_path('~/Github/gko_cms3/gko_core', __FILE__)
