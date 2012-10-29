@@ -13,9 +13,9 @@
 			<%= render 'site_title' %>
 			<h4 id="site-subtitle" class="hide-on-mobile"><%= site.subtitle.html_safe if site.subtitle.present? %></h4>
 			<!-- Everything you want hidden at 980px or less, place within here -->
-			<div class="pull-right">
+			<div class="top-btn-bar pull-right">
 				<%= link_to(t("book_online"), "http://www.globekey.com/reserve.php?hid=SBH9592", :class => "btn btn-large", :target => :blank, :id => "book-online-btn") %>
-				<%= link_to(t("virtual_tour"), @virtual_tours_page.public_url, :class => "btn btn-large", :id => "virtual-tours-btn") if @virtual_tours_page %>
+				<%= link_to(t("virtual_tour"), @virtual_tours_page.public_url, :class => "btn btn-large visible-desktop", :id => "virtual-tours-btn") if @virtual_tours_page %>
 				<%= render 'locales_select' %>
 			</div>
 		</div>
@@ -43,6 +43,9 @@
 			<div class='span9 main-content'>
 				<%= render "flash" %>
 				<%= yield %>
+				<% if content_for?(:sidebar) %>
+			        <%= yield :sidebar %>
+			    <% end %>
 			</div>
 		</div>
 		<% end %>

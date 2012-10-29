@@ -1865,7 +1865,7 @@ table .span24 {
   *margin-right: .3em;
   line-height: 14px;
   vertical-align: text-top;
-  background-image: url(/assets/twitter/bootstrap/glyphicons-halflings.png);
+  background-image: url(/assets/twitter/bootstrap/glyphicons-halflings-2ed0cba6eca0f44737ab78f1e58bc11e.png);
   background-position: 14px 14px;
   background-repeat: no-repeat;
 }
@@ -1877,7 +1877,7 @@ table .span24 {
 
 /* line 29, ../../../../.rvm/gems/ruby-1.8.7-p358@global/bundler/gems/gko_cms3-100f6c8953c4/gko_core/vendor/assets/stylesheets/twitter/bootstrap/_sprites.scss */
 .icon-white {
-  background-image: url(/assets/twitter/bootstrap/glyphicons-halflings-white.png);
+  background-image: url(/assets/twitter/bootstrap/glyphicons-halflings-white-4fbb6a0b9b4e61912f486ac494a858f1.png);
 }
 
 /* line 33, ../../../../.rvm/gems/ruby-1.8.7-p358@global/bundler/gems/gko_cms3-100f6c8953c4/gko_core/vendor/assets/stylesheets/twitter/bootstrap/_sprites.scss */
@@ -5560,7 +5560,7 @@ aside > section {
 
 /* line 54, ../../../../.rvm/gems/ruby-1.8.7-p358@global/bundler/gems/gko_cms3-100f6c8953c4/gko_core/app/assets/stylesheets/gko/public/_default.scss */
 .missing-document-preview {
-  background: transparent url(/assets/gko/icon_pdf_grey_light_x110.png) left center no-repeat;
+  background: transparent url(/assets/gko/icon_pdf_grey_light_x110-0efb408ff8252aabfb46b1216287a7d7.png) left center no-repeat;
   min-height: 110px;
 }
 
@@ -5841,7 +5841,7 @@ footer .nav > li > a:hover {
   width: 12px;
   height: 12px;
   margin-right: 5px;
-  background: #dddddd url(/assets/dot.png) no-repeat;
+  background: #dddddd url(/assets/dot-870f66fdedc7a4c59b3890731248b474.png) no-repeat;
   float: left;
   cursor: pointer;
   font: 0/0 a;
@@ -5872,7 +5872,7 @@ footer .nav > li > a:hover {
   right: 10px;
   z-index: 2;
   display: none;
-  background: url(/assets/galleria/themes/classic/classic-loader.gif) no-repeat 2px 2px;
+  background: url(/assets/galleria/themes/classic/classic-loader-02f10c082e1b85be0755210f9a13f12a.gif) no-repeat 2px 2px;
 }
 
 /* line 75, ../../app/assets/stylesheets/_galleria.scss */
@@ -6071,7 +6071,7 @@ footer .nav > li > a:hover {
 .galleria-info-close,
 .galleria-image-nav-left,
 .galleria-image-nav-right {
-  background-image: url(/assets/galleria/themes/classic/classic-map.png);
+  background-image: url(/assets/galleria/themes/classic/classic-map-1a9fcada4c732aaa8341d6f9dfd01797.png);
   background-repeat: no-repeat;
 }
 
@@ -6186,7 +6186,7 @@ footer .nav > li > a:hover {
   text-shadow: none;
   background-color: transparent;
   border: 0;
-  background: white url(/assets/logo.gif) center center no-repeat;
+  background: white url(/assets/logo-72bbf2f23026aec838209d4e6f74ca92.gif) center center no-repeat;
   background-size: contain;
 }
 

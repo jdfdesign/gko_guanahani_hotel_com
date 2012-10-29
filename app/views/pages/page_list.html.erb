@@ -23,7 +23,7 @@
 				<h3><%= section.title.html_safe %></h3>
 				<p><%= render_html_text(section.body) %></p>
 				<p><%= link_to(t(:"view_diaporama"), url_for([section]), :class => "btn remote-diaporama", :remote => true ) if section.images.any?%>
-				<%= link_to(t(:"view_virtual_visit"), "/assets/garden-1-bedroom-suites.mov", :class => "btn virtual-tour" )%></p>
+				<%= link_to(t(:"view_virtual_visit"), "/assets/#{section.video_name}.mov", :class => "btn virtual-tour" ) if section.video_name.presence %></p>
 			</div>
 			<% end %>
 		</div>
