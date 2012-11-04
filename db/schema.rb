@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121018222518) do
+ActiveRecord::Schema.define(:version => 20121101154954) do
 
   create_table "accounts", :force => true do |t|
     t.string   "reference",  :limit => 40
@@ -67,12 +67,12 @@ ActiveRecord::Schema.define(:version => 20121018222518) do
   create_table "category_translations", :force => true do |t|
     t.integer  "category_id"
     t.string   "locale"
-    t.string   "title"
-    t.string   "path"
     t.text     "meta_description"
-    t.string   "meta_title"
     t.string   "slug"
+    t.string   "meta_title"
     t.text     "body"
+    t.string   "path"
+    t.string   "title"
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
   end
@@ -455,7 +455,7 @@ ActiveRecord::Schema.define(:version => 20121018222518) do
     t.boolean  "shallow_permalink", :default => true
     t.boolean  "robot_index",       :default => true
     t.boolean  "robot_follow",      :default => true
-    t.string   "password"
+    t.boolean  "restricted",        :default => false
   end
 
   add_index "sections", ["link_id", "link_type"], :name => "index_sections_on_link_id_and_link_type"
@@ -516,6 +516,39 @@ ActiveRecord::Schema.define(:version => 20121018222518) do
   end
 
   add_index "states", ["country_id"], :name => "index_states_on_country_id"
+
+  create_table "sticker_translations", :force => true do |t|
+    t.integer  "sticker_id"
+    t.string   "locale"
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "sticker_translations", ["locale"], :name => "index_sticker_translations_on_locale"
+  add_index "sticker_translations", ["sticker_id"], :name => "index_sticker_translations_on_sticker_id"
+
+  create_table "stickers", :force => true do |t|
+    t.string   "name"
+    t.integer  "site_id"
+    t.integer  "section_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "stickers", ["name"], :name => "index_stickers_on_name"
+  add_index "stickers", ["site_id", "section_id"], :name => "index_stickers_on_site_id_and_section_id"
+
+  create_table "stickings", :force => true do |t|
+    t.integer  "sticker_id"
+    t.integer  "stickable_id"
+    t.string   "stickable_type"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
+
+  add_index "stickings", ["stickable_id", "stickable_type"], :name => "index_stickings_on_stickable_id_and_stickable_type"
+  add_index "stickings", ["sticker_id"], :name => "index_stickings_on_sticker_id"
 
   create_table "supports", :force => true do |t|
     t.integer "owner_id"

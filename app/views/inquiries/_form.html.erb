@@ -1,0 +1,29 @@
+<%
+   privacy_text = t(:'.privacy_policy')
+   receivers = [{:label => 'Informations', :email => 'hotel@leguanahani.com'},{:label => 'Concierge', :email => 'concierge@leguanahani.com'},{:label => 'Spa', :email => 'spa@leguanahani.com'},{:label => 'Réservations', :email => 'reservations@leguanahani.com'}].map { |r| [r[:label], r[:email]] }
+%>
+<%= simple_form_for(:inquiry, :url => inquiries_path, :method => :post,
+                    :html => {:class => [:'form-horizontal', :inquiry]}) do |form| %>
+    <%= hidden_field_tag(:return_to, request.url) %>
+    <%= form.hidden_field :site_id, :value => site.id %>
+    <%= form.error_notification %>
+
+  	<%= form.input :receiver do %>
+ 		<%= form.select :receiver, :collection => receivers %>
+	<% end%>
+  
+    <%= form.input :name, :hint => '' %>
+    <%= form.input :email, :hint => false %>
+    <%= form.input :phone, :hint => false, :required => false %>
+    <%= form.input :message, :as => :text, :hint => false, :input_html => {:rows => 6} %>
+	<%= render 'anti_spam_field', :f => form %>
+    <% if privacy_text.present? -%>
+        <div class='control-group policy'>
+            <%= privacy_text.html_safe %>
+        </div>
+    <% end %>
+    <div class='controls'>
+      <%= form.button :submit, t("send_inquiry") %>
+    </div>
+	
+<% end %>

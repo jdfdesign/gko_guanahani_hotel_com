@@ -178,14 +178,22 @@ $infoBorder:              darken(adjust_hue($infoBackground, -10deg), 7%);
 $navbarLinkBackground:            transparent;	
 // Footer (gko addon)
 // -------------------------
-$footerHeight:                    40px;// !default;
-$footerBackground:                transparent;// !default;
-$footerText:                      $navbarText;// !default;
-$footerLinkColor:                 $navbarLinkColor;// !default;
-$footerLinkBackground:       	  $navbarLinkBackground;// !default;
-$footerLinkColorHover:            $navbarLinkColorHover;// !default;
-$footerLinkBackgroundHover:       $navbarLinkBackgroundHover;// !default;
-
+$footerHeight:                    40px;
+$footerBackground:                transparent;
+$footerText:                      $navbarText;
+$footerLinkColor:                 $textColor;
+$footerLinkBackground:       	  transparent;
+$footerLinkColorHover:            $grayDarker;
+$footerLinkBackgroundHover:       transparent;
+// Copyright (gko addon)
+// -------------------------
+$copyrightHeight:                    22px;
+$copyrightBackground:                $footerBackground;
+$copyrightText:                      $footerText;
+$copyrightLinkColor:                 $footerLinkColor;
+$copyrightLinkBackground:            $footerLinkBackground;
+$copyrightLinkColorHover:            $footerLinkColorHover;
+$copyrightLinkBackgroundHover:       $footerLinkBackgroundHover;
 // Import
 @import "twitter/bootstrap";
 @import "gko/public/base";
@@ -199,10 +207,6 @@ $footerLinkBackgroundHover:       $navbarLinkBackgroundHover;// !default;
 /*-----------------------------------------
  LAYOUT
 ----------------------------------------- */
-body {
-//	font-weight: 100;
-}
-
 #wrapper-wide-body {
 	max-width: 1025px;
 	@include box-sizing(border-box);
@@ -210,50 +214,14 @@ body {
 	@include center-block();
 	background-color: #fff;
 }
-.container-fluid {
-	padding: 10px;
-	
-}
-.btn-navbar {
-  display: none;
-  padding: 7px 10px;
-}
-.navbar {
-	.btn-navbar {
-	  float: right;
-	  margin-left: 5px;
-	  margin-right: 5px;
-	  @include buttonBackground($navbarBackgroundHighlight, $navbarBackground);
-	  @include box-shadow("inset 0 1px 0 rgba(255,255,255,.1), 0 1px 0 rgba(255,255,255,.075)");
-	}
 
-	.nav {
-		float: right;
-		margin-bottom: 0;
-	}
-	.nav > li {
-		display: block;
-		float: left;
-	}
-	.nav > li > a {
-		float: none;
-		padding: 9px 10px 11px;
-		line-height: 19px;
-		font-size: 11px;
-		text-decoration: none;
-		text-transform: uppercase;
-		text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-	}
-}
 	// Website or project name
 .brand {
 	text-align: center;
 	padding: 0;
-
 	a {
 		padding: 0;
 		margin: 0 auto;
-		
 		cursor: pointer;
 		text-decoration: none;
 		display: block;
@@ -318,36 +286,28 @@ body {
 		};
 	}
 	.dropdown-menu li > a {
-		//font-weight: 100;
+		color: white;
 	}
 	
 }
-
-#footer-container,
-#copyright-container {
-max-width: 1025px;	
-@include center-block;
+.btn-navbar {
+	display: none;	
+	padding: 9px 14px;
 }
-
+.dropdown-menu ul {
+	list-style: none;
+}
+/*-----------------------------------------
+ FOOTER
+----------------------------------------- */
 #footer {
 	margin: 32px 0;
 	color: #939598;
+	
 	h3 {
 		color: $grayDark;
 	}
-	.span3 {
-		border-left: 1px solid #fff;
-		padding: 0 20px;
-		min-height: 300px;
-		width: 25%;
-		margin: 0;
-	}
-	.nav {
-		float: left;
-		
-	}
 	.nav > li {
-		display: block;
 		float: none;
 	}
 	.nav > li > a {
@@ -356,14 +316,11 @@ max-width: 1025px;
 		line-height: 14px;
 		text-decoration: none;
 		text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
-		color: $textColor;
-		&:hover {
-			color: $grayDarker;
-			background-color: transparent;
-		};
 	}
 }
-
+/*-----------------------------------------
+ COPYRIGHT
+----------------------------------------- */
 #copyright {
 	margin: 32px 0;
 	color: #939598;
@@ -384,7 +341,7 @@ max-width: 1025px;
 		font-size: 10px;
 	}
 }
-#site_by {
+#site-by {
 	float:right;
 	font-size: 10px;
 	line-height: 14px;
@@ -397,17 +354,7 @@ max-width: 1025px;
 .container-fluid#main-container {
 	padding-top: 0;
 }
-.modal#modal-gallery {
-	width: 834px;
-	margin-left: -417px;
-}
-.modal#virtual-tour-modal {
-	width: 834px;
-	margin-left: -417px;
-}
-.modal-body {
-	max-height: 480px;
-}
+
 #book-online-btn {
 	@include buttonBackground($customGreen, $customGreenDark);
 	color: $white;
@@ -427,6 +374,12 @@ max-width: 1025px;
 /*-----------------------------------------
  GRIDS
 ----------------------------------------- */
+.thumbnail {
+	border: none;
+	.caption {
+		padding: 9px 0;
+	}
+}
 ul#grid-document_items {
 	.thumbnail {
 		h2.title {
@@ -449,21 +402,36 @@ ul#parent-categories-filter {
 	}	
 } 
 /*-----------------------------------------
+ TYPOGRAPHY
+----------------------------------------- */
+h1.page-title {
+	margin-bottom: $baseLineHeight;
+}
+
+/*-----------------------------------------
  RESPONSIVE
 ----------------------------------------- */
-@import "twitter/bootstrap/responsive";
-@import "gko/default_responsive";
+// REPEAT VARIABLES & MIXINS
+// -------------------------
+// Required since we compile the responsive stuff separately
 
-@media (max-width: 979px) {
-	.nav-collapse .dropdown-menu {
-	//	display: none;
+@import "twitter/bootstrap/variables"; // Modify this for custom colors, font-sizes, etc
+@import "twitter/bootstrap/mixins";
+@import "twitter/bootstrap/responsive-utilities";
+@import "twitter/bootstrap/responsive-767px-max";
+@import "twitter/bootstrap/responsive-768px-979px";
+@import "twitter/bootstrap/responsive-1200px-min";
+@import "responsive-navbar";
+@import "gko/default_responsive";
+@media (max-width: 480px) {
+	/*-----------------------------------------
+	 MODAL
+	----------------------------------------- */
+	.modal-body {
+		max-height: 300px;
 	}
-	.btn-navbar {
-		display: block;	
-	}
-	.hide-on-mobile {
-		display: none;
-	}
+}
+@media (max-width: 767px) {
 	.top-btn-bar {
 		float: none;
 		@include clearfix;
@@ -471,20 +439,134 @@ ul#parent-categories-filter {
 		margin-top: $baseLineHeight / 2;
 		margin-bottom: $baseLineHeight / 2;
 	}
+	#footer .span3 {
+		clear: both;
+	}
+	.galleria-thumbnails-container {
+		display: none;
+	}
+
+
+		.nav-collapse .dropdown-menu {
+			margin-top: 1px;
+			background-color: $orange;
+		}
+		.nav-collapse .dropdown-menu a {
+			padding: 6px 15px;
+			background-color: $orange;
+			color: $white;
+			font-size: 16px;
+			line-height: 27px;
+			@include border-radius(0);
+			@include transition(background-color .5s linear);
+
+			&:hover {
+				text-decoration: none;
+				background-color: $orangeDark;
+			}
+		}
+
+		.nav li.green a,
+		.nav li.green + ul > li,
+		.nav li.green + ul > li > a {
+			background-color: $customGreenDark;
+			&:hover {
+				background-color: $customGreen;
+			}
+		}
+		li.green .dropdown-menu {
+			background-color: $customGreenDark;
+		}
+		.nav li.purple a,
+		.nav li.purple + ul > li,
+		.nav li.purple + ul > li > a {
+			background-color: $customPurpleDark;
+			&:hover {
+				background-color: $customPurple;
+			}
+		}
+		li.purple .dropdown-menu {
+			background-color: $customPurpleDark;
+		}
+		.dropdown-menu li > a {
+			color: white;
+		}
+		
+		.nav-collapse .dropdown-menu {
+			margin: 0;
+			padding: 0 15px;
+		}
+		/*-----------------------------------------
+		 MODAL
+		----------------------------------------- */
+		.modal-body {
+			max-height: 400px;
+		}
 }
 
-@media (min-width: 980px) {
-	
+@media (min-width: 768px) {
+	.container-fluid {
+		padding: 10px;
+	}
 	.brand {
 		position: absolute;
 		z-index: 10000;
 	}
-	#primary-menu {
-		@include box-shadow(2px 2px 12px rgba(0,0,0,.2));
-	}
 	.dropdown-menu {
 		top: 0;
 		left: 100%;
-		
+	}
+	#primary-menu {
+		@include box-shadow(2px 2px 12px rgba(0,0,0,.2));
+	}
+
+	/*-----------------------------------------
+	 FORM
+	----------------------------------------- */
+	.span6 {
+		input, textarea, select {
+			width: 180px;
+		}
+	}
+	/*-----------------------------------------
+	 FOOTER
+	----------------------------------------- */
+	#footer-container {
+		max-width: 1025px;	
+		@include center-block;
+	}
+	#footer {
+		.span3 {
+			min-height: 300px;
+			border-left: 1px solid #fff;
+			padding: 0 20px;
+		}
+	}
+	/*-----------------------------------------
+	 COPYRIGHT
+	----------------------------------------- */
+	#copyright-container {
+		max-width: 1025px;	
+		@include center-block;
+	}
+	/*-----------------------------------------
+	 MODAL
+	----------------------------------------- */
+
+	.modal-body {
+		max-height: 400px;
+	}
+}
+
+@media (min-width: 860px) {
+	/*-----------------------------------------
+	 MODAL
+	----------------------------------------- */
+	.modal {
+		width: 834px;
+		margin-left: -417px;
+	}
+	.modal-body {
+		max-height: 480px;
 	}
 }

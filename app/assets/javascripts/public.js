@@ -97,7 +97,7 @@ $(document).ready(function() {
                 responsive: true,
                 height: 0.55,
 				carousel: false,
-				thumbnails: "numbers",
+				thumbnails: "empty",
                 imageCrop: 'landscape',
                 transition: 'flash',
                 showCounter: false,
@@ -140,6 +140,7 @@ $(document).ready(function() {
 		
 		
 	})
+
 
 	f_init_galleria();
 });
