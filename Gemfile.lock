@@ -1,17 +1,17 @@
 GIT
   remote: git@github.com:jdfdesign/gko_cms3.git
-  revision: f508c911f78ec600fbe74d3406ac4d1043d7a2e1
+  revision: 73c4216ae8435f317da91aae953dbad439305d77
   specs:
-    gko_albums (0.4.29)
-    gko_auth (0.4.29)
+    gko_albums (0.4.31)
+    gko_auth (0.4.31)
       cancan (= 1.6.8)
       devise (= 2.1.2)
-    gko_blog (0.4.29)
-      gko_categories (= 0.4.29)
-      gko_core (= 0.4.29)
-      gko_stickers (= 0.4.29)
-    gko_categories (0.4.29)
-    gko_core (0.4.29)
+    gko_blog (0.4.31)
+      gko_categories (= 0.4.31)
+      gko_core (= 0.4.31)
+      gko_stickers (= 0.4.31)
+    gko_categories (0.4.31)
+    gko_core (0.4.31)
       RedCloth (= 4.2.9)
       activesupport-slices (= 0.0.2)
       acts_as_indexed (~> 0.7.7)
@@ -51,14 +51,14 @@ GIT
       uglifier (>= 1.0.3)
       uuid (= 2.3.5)
       will_paginate (~> 3.0.2)
-    gko_documents (0.4.29)
+    gko_documents (0.4.31)
       dragonfly (~> 0.9.8)
       rack-cache (>= 0.5.3)
-    gko_image_bank (0.4.29)
-    gko_images (0.4.29)
-    gko_inquiries (0.4.29)
+    gko_image_bank (0.4.31)
+    gko_images (0.4.31)
+    gko_inquiries (0.4.31)
       filters_spam (~> 0.2)
-    gko_stickers (0.4.29)
+    gko_stickers (0.4.31)
 
 GEM
   remote: http://rubygems.org/
@@ -250,7 +250,7 @@ GEM
       polyglot
       polyglot (>= 0.3.1)
     truncate_html (0.5.5)
-    tzinfo (0.3.34)
+    tzinfo (0.3.35)
     uglifier (1.2.4)
       execjs (>= 0.3.0)
       multi_json (>= 1.0.2)
@@ -265,16 +265,16 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-rails (~> 3.2.2)
-  gko_albums (= 0.4.29)!
-  gko_auth (= 0.4.29)!
-  gko_blog (= 0.4.29)!
-  gko_categories (= 0.4.29)!
-  gko_core (= 0.4.29)!
-  gko_documents (= 0.4.29)!
-  gko_image_bank (= 0.4.29)!
-  gko_images (= 0.4.29)!
-  gko_inquiries (= 0.4.29)!
-  gko_stickers (= 0.4.29)!
+  gko_albums (= 0.4.31)!
+  gko_auth (= 0.4.31)!
+  gko_blog (= 0.4.31)!
+  gko_categories (= 0.4.31)!
+  gko_core (= 0.4.31)!
+  gko_documents (= 0.4.31)!
+  gko_image_bank (= 0.4.31)!
+  gko_images (= 0.4.31)!
+  gko_inquiries (= 0.4.31)!
+  gko_stickers (= 0.4.31)!
   iconv
   sass-rails (~> 3.2.5)
   uglifier (>= 1.0.3)

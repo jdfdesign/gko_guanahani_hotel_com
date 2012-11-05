@@ -64,7 +64,7 @@
     padding: 6px 15px;
     font-weight: bold;
     color: $navbarLinkColor;
-    @include border-radius(3px);
+    @include border-radius(0);
   }
   // Buttons
   .nav-collapse .btn {
