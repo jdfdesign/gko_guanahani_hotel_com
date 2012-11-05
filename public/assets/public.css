@@ -7519,16 +7519,36 @@ h1.page-title {
   }
 }
 @media (max-width: 480px) {
+  /* line 440, ../../app/assets/stylesheets/public.css.scss */
+  .modal {
+    position: fixed;
+    top: 3%;
+    right: 3%;
+    left: 3%;
+    bottom: 3%;
+    width: auto;
+    margin: 0;
+  }
+
+  /* line 449, ../../app/assets/stylesheets/public.css.scss */
+  .modal-body {
+    max-height: 350px;
+    padding: 15px;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+@media (max-width: 480px) {
   /*-----------------------------------------
    MODAL
   ----------------------------------------- */
-  /* line 441, ../../app/assets/stylesheets/public.css.scss */
+  /* line 462, ../../app/assets/stylesheets/public.css.scss */
   .modal-body {
     max-height: 300px;
   }
 }
 @media (max-width: 767px) {
-  /* line 446, ../../app/assets/stylesheets/public.css.scss */
+  /* line 467, ../../app/assets/stylesheets/public.css.scss */
   .top-btn-bar {
     float: none;
     *zoom: 1;
@@ -7546,23 +7566,23 @@ h1.page-title {
     clear: both;
   }
 
-  /* line 453, ../../app/assets/stylesheets/public.css.scss */
+  /* line 474, ../../app/assets/stylesheets/public.css.scss */
   #footer .span3 {
     clear: both;
   }
 
-  /* line 456, ../../app/assets/stylesheets/public.css.scss */
+  /* line 477, ../../app/assets/stylesheets/public.css.scss */
   .galleria-thumbnails-container {
     display: none;
   }
 
-  /* line 461, ../../app/assets/stylesheets/public.css.scss */
+  /* line 482, ../../app/assets/stylesheets/public.css.scss */
   .nav-collapse .dropdown-menu {
     margin-top: 1px;
     background-color: #ffab00;
   }
 
-  /* line 465, ../../app/assets/stylesheets/public.css.scss */
+  /* line 486, ../../app/assets/stylesheets/public.css.scss */
   .nav-collapse .dropdown-menu a {
     padding: 6px 15px;
     background-color: #ffab00;
@@ -7578,54 +7598,54 @@ h1.page-title {
     -o-transition: background-color 0.5s linear;
     transition: background-color 0.5s linear;
   }
-  /* line 474, ../../app/assets/stylesheets/public.css.scss */
+  /* line 495, ../../app/assets/stylesheets/public.css.scss */
   .nav-collapse .dropdown-menu a:hover {
     text-decoration: none;
     background-color: #e35e01;
   }
 
-  /* line 482, ../../app/assets/stylesheets/public.css.scss */
+  /* line 503, ../../app/assets/stylesheets/public.css.scss */
   .nav li.green a,
   .nav li.green + ul > li,
   .nav li.green + ul > li > a {
     background-color: #5fdac8;
   }
-  /* line 484, ../../app/assets/stylesheets/public.css.scss */
+  /* line 505, ../../app/assets/stylesheets/public.css.scss */
   .nav li.green a:hover,
   .nav li.green + ul > li:hover,
   .nav li.green + ul > li > a:hover {
     background-color: #64edd9;
   }
 
-  /* line 488, ../../app/assets/stylesheets/public.css.scss */
+  /* line 509, ../../app/assets/stylesheets/public.css.scss */
   li.green .dropdown-menu {
     background-color: #5fdac8;
   }
 
-  /* line 493, ../../app/assets/stylesheets/public.css.scss */
+  /* line 514, ../../app/assets/stylesheets/public.css.scss */
   .nav li.purple a,
   .nav li.purple + ul > li,
   .nav li.purple + ul > li > a {
     background-color: #aaa3d5;
   }
-  /* line 495, ../../app/assets/stylesheets/public.css.scss */
+  /* line 516, ../../app/assets/stylesheets/public.css.scss */
   .nav li.purple a:hover,
   .nav li.purple + ul > li:hover,
   .nav li.purple + ul > li > a:hover {
     background-color: #c1b6f9;
   }
 
-  /* line 499, ../../app/assets/stylesheets/public.css.scss */
+  /* line 520, ../../app/assets/stylesheets/public.css.scss */
   li.purple .dropdown-menu {
     background-color: #aaa3d5;
   }
 
-  /* line 502, ../../app/assets/stylesheets/public.css.scss */
+  /* line 523, ../../app/assets/stylesheets/public.css.scss */
   .dropdown-menu li > a {
     color: white;
   }
 
-  /* line 506, ../../app/assets/stylesheets/public.css.scss */
+  /* line 527, ../../app/assets/stylesheets/public.css.scss */
   .nav-collapse .dropdown-menu {
     margin: 0;
     padding: 0 15px;
@@ -7634,30 +7654,30 @@ h1.page-title {
   /*-----------------------------------------
    MODAL
   ----------------------------------------- */
-  /* line 513, ../../app/assets/stylesheets/public.css.scss */
+  /* line 534, ../../app/assets/stylesheets/public.css.scss */
   .modal-body {
     max-height: 400px;
   }
 }
 @media (min-width: 768px) {
-  /* line 519, ../../app/assets/stylesheets/public.css.scss */
+  /* line 540, ../../app/assets/stylesheets/public.css.scss */
   .container-fluid {
     padding: 10px;
   }
 
-  /* line 522, ../../app/assets/stylesheets/public.css.scss */
+  /* line 543, ../../app/assets/stylesheets/public.css.scss */
   .brand {
     position: absolute;
     z-index: 10000;
   }
 
-  /* line 526, ../../app/assets/stylesheets/public.css.scss */
+  /* line 547, ../../app/assets/stylesheets/public.css.scss */
   .nav-collapse .dropdown-menu {
     top: 0;
     left: 100%;
   }
 
-  /* line 530, ../../app/assets/stylesheets/public.css.scss */
+  /* line 551, ../../app/assets/stylesheets/public.css.scss */
   #primary-menu {
     -webkit-box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
     -moz-box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
@@ -7667,7 +7687,7 @@ h1.page-title {
   /*-----------------------------------------
    FORM
   ----------------------------------------- */
-  /* line 538, ../../app/assets/stylesheets/public.css.scss */
+  /* line 559, ../../app/assets/stylesheets/public.css.scss */
   .span6 input, .span6 textarea, .span6 select {
     width: 180px;
   }
@@ -7675,7 +7695,7 @@ h1.page-title {
   /*-----------------------------------------
    FOOTER
   ----------------------------------------- */
-  /* line 545, ../../app/assets/stylesheets/public.css.scss */
+  /* line 566, ../../app/assets/stylesheets/public.css.scss */
   #footer-container {
     max-width: 1025px;
     display: block;
@@ -7683,7 +7703,7 @@ h1.page-title {
     margin-right: auto;
   }
 
-  /* line 550, ../../app/assets/stylesheets/public.css.scss */
+  /* line 571, ../../app/assets/stylesheets/public.css.scss */
   #footer .span3 {
     min-height: 300px;
     border-left: 1px solid #fff;
@@ -7693,7 +7713,7 @@ h1.page-title {
   /*-----------------------------------------
    COPYRIGHT
   ----------------------------------------- */
-  /* line 559, ../../app/assets/stylesheets/public.css.scss */
+  /* line 580, ../../app/assets/stylesheets/public.css.scss */
   #copyright-container {
     max-width: 1025px;
     display: block;
@@ -7704,7 +7724,7 @@ h1.page-title {
   /*-----------------------------------------
    MODAL
   ----------------------------------------- */
-  /* line 567, ../../app/assets/stylesheets/public.css.scss */
+  /* line 588, ../../app/assets/stylesheets/public.css.scss */
   .modal-body {
     max-height: 400px;
   }
@@ -7713,13 +7733,13 @@ h1.page-title {
   /*-----------------------------------------
    MODAL
   ----------------------------------------- */
-  /* line 576, ../../app/assets/stylesheets/public.css.scss */
+  /* line 597, ../../app/assets/stylesheets/public.css.scss */
   .modal {
     width: 834px;
     margin-left: -417px;
   }
 
-  /* line 580, ../../app/assets/stylesheets/public.css.scss */
+  /* line 601, ../../app/assets/stylesheets/public.css.scss */
   .modal-body {
     max-height: 480px;
   }
