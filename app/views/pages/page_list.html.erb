@@ -1,5 +1,6 @@
-<%= render_page_title(resource.title) %>
-<%= render_html_text(resource.body) %>
+
+	<%= render_page_title(resource.title) %>
+	<%= render_html_text(resource.body) %>
 <%
 	sections = begin
 		if resource.children.try(:any?)

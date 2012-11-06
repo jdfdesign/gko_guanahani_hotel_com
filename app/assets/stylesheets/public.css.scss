@@ -447,22 +447,13 @@ h1.page-title {
         margin: 0;
     }
     .modal-body {
-        max-height: 350px;
+        max-height: 270px;
         padding: 15px;
         overflow-y: auto;
         -webkit-overflow-scrolling: touch;
      }
 }
 
-
-@media (max-width: 480px) {
-	/*-----------------------------------------
-	 MODAL
-	----------------------------------------- */
-	.modal-body {
-		max-height: 300px;
-	}
-}
 @media (max-width: 767px) {
 	.top-btn-bar {
 		float: none;
