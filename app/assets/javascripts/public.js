@@ -1,3 +1,9 @@
+//= require twitter/bootstrap/transition.js
+//= require twitter/bootstrap/alert.js
+//= require twitter/bootstrap/button.js
+//= require twitter/bootstrap/collapse.js
+//= require twitter/bootstrap/dropdown.js
+//= require twitter/bootstrap/modal.js
 //= require gko/gko.galleria
 $(document).ready(function() {
     f_init_galleria = function() {
@@ -101,7 +107,8 @@ $(document).ready(function() {
                 imageCrop: 'landscape',
                 transition: 'flash',
                 showCounter: false,
-                showInfo: false
+                showInfo: false,
+                debug: false
             });
         }
 

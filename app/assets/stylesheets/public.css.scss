@@ -195,7 +195,7 @@ $copyrightLinkBackground:            $footerLinkBackground;
 $copyrightLinkColorHover:            $footerLinkColorHover;
 $copyrightLinkBackgroundHover:       $footerLinkBackgroundHover;
 // Import
-@import "twitter/bootstrap";
+@import "twitter.2.0.4/bootstrap";
 @import "gko/public/base";
 @import "galleria";
 /*-----------------------------------------
@@ -426,12 +426,12 @@ h1.page-title {
 // -------------------------
 // Required since we compile the responsive stuff separately
 
-@import "twitter/bootstrap/variables"; // Modify this for custom colors, font-sizes, etc
-@import "twitter/bootstrap/mixins";
-@import "twitter/bootstrap/responsive-utilities";
-@import "twitter/bootstrap/responsive-767px-max";
-@import "twitter/bootstrap/responsive-768px-979px";
-@import "twitter/bootstrap/responsive-1200px-min";
+@import "twitter.2.0.4/bootstrap/variables"; // Modify this for custom colors, font-sizes, etc
+@import "twitter.2.0.4/bootstrap/mixins";
+@import "twitter.2.0.4/bootstrap/responsive-utilities";
+@import "twitter.2.0.4/bootstrap/responsive-767px-max";
+@import "twitter.2.0.4/bootstrap/responsive-768px-979px";
+@import "twitter.2.0.4/bootstrap/responsive-1200px-min";
 @import "responsive-navbar";
 @import "gko/default_responsive";
 
