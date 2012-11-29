@@ -1,3 +1,7 @@
+//= require jquery
+//= require jquery_ujs
+//= require gko/public/jquery.grid.responsive.js
+//= require gko/public/jquery.bootstrap.navbarhover.js
 //= require twitter/bootstrap/transition.js
 //= require twitter/bootstrap/alert.js
 //= require twitter/bootstrap/button.js
