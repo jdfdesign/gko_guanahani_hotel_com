@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121113154016) do
+ActiveRecord::Schema.define(:version => 20121222103812) do
 
   create_table "accounts", :force => true do |t|
     t.string   "reference",  :limit => 40
@@ -38,18 +38,20 @@ ActiveRecord::Schema.define(:version => 20121113154016) do
   add_index "assets", ["site_id"], :name => "index_assets_on_site_id"
 
   create_table "categories", :force => true do |t|
-    t.integer "site_id"
-    t.integer "section_id"
-    t.integer "parent_id"
-    t.integer "lft",              :default => 0, :null => false
-    t.integer "rgt",              :default => 0, :null => false
-    t.string  "name"
-    t.string  "slug"
-    t.string  "path"
-    t.string  "title"
-    t.text    "body"
-    t.string  "meta_title"
-    t.text    "meta_description"
+    t.integer  "site_id"
+    t.integer  "section_id"
+    t.integer  "parent_id"
+    t.integer  "lft",              :default => 0, :null => false
+    t.integer  "rgt",              :default => 0, :null => false
+    t.string   "name"
+    t.string   "slug"
+    t.string   "path"
+    t.string   "title"
+    t.text     "body"
+    t.string   "meta_title"
+    t.text     "meta_description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "categories", ["parent_id"], :name => "index_categories_on_parent_id"

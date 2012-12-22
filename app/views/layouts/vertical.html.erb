@@ -1,4 +1,8 @@
-<% @virtual_tours_page = site.pages.find_by_name("virtual-tours") %>
+<% 
+@virtual_tours_page = site.pages.find_by_name("virtual-tours") 
+@images = resource.parent.images if resource && resource.respond_to?(:leaf?) && resource.leaf?
+@images ||= site.home.images
+%>
 
 <!doctype html>
 <%= render 'html_tag' %>
@@ -26,7 +30,7 @@
 	    <% else %>
 		<div class='row-fluid'>
 			<div class="span12">
-			<%= render_slideshow_for(site.home) %>
+			<%= render("images/slideshow", :images => @images) %>
 			</div>
 	  	</div>
 		<div class='row-fluid'>
