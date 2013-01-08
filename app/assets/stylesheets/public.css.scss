@@ -198,6 +198,12 @@ $copyrightLinkBackgroundHover:       $footerLinkBackgroundHover;
 @import "twitter.2.0.4/bootstrap";
 @import "gko/public/base";
 @import "galleria";
+
+a:focus,
+.btn:focus {
+  outline: 0;
+}
+
 /*-----------------------------------------
  GALLERIA
 ----------------------------------------- */
@@ -541,8 +547,11 @@ h1.page-title {
 	}
 	#primary-menu {
 		@include box-shadow(2px 2px 12px rgba(0,0,0,.2));
+		
 	}
-
+	body.noslideshow #main-row {
+		margin-top: 68px;
+	}
 	/*-----------------------------------------
 	 FORM
 	----------------------------------------- */

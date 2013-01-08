@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121222103812) do
+ActiveRecord::Schema.define(:version => 20130105132327) do
 
   create_table "accounts", :force => true do |t|
     t.string   "reference",  :limit => 40
@@ -358,6 +358,25 @@ ActiveRecord::Schema.define(:version => 20121222103812) do
     t.datetime "updated_at",                    :null => false
   end
 
+  create_table "mail_methods", :force => true do |t|
+    t.integer  "site_id",                                                       :null => false
+    t.string   "environment",            :default => "production"
+    t.boolean  "enable_mail_delivery",   :default => true
+    t.string   "mail_host",              :default => "localhost"
+    t.string   "mail_domain",            :default => "localhost"
+    t.integer  "mail_port",              :default => 25
+    t.string   "mail_auth_type",         :default => "none"
+    t.string   "smtp_username",                                                 :null => false
+    t.string   "smtp_password",                                                 :null => false
+    t.string   "secure_connection_type", :default => "None"
+    t.string   "mails_from",             :default => "no-reply@joufdesign.com"
+    t.string   "mail_bcc"
+    t.datetime "created_at",                                                    :null => false
+    t.datetime "updated_at",                                                    :null => false
+  end
+
+  add_index "mail_methods", ["site_id"], :name => "index_mail_methods_on_site_id"
+
   create_table "partner_translations", :force => true do |t|
     t.integer  "partner_id"
     t.string   "locale"
@@ -458,6 +477,7 @@ ActiveRecord::Schema.define(:version => 20121222103812) do
     t.boolean  "robot_index",       :default => true
     t.boolean  "robot_follow",      :default => true
     t.boolean  "restricted",        :default => false
+    t.string   "template"
   end
 
   add_index "sections", ["link_id", "link_type"], :name => "index_sections_on_link_id_and_link_type"
