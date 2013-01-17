@@ -13,15 +13,16 @@
 <div id="wrapper-wide-body">
 	<header class="container-fluid">
 		<div class='row-fluid'>
-
-			<%= render 'site_title' %>
-			<h4 id="site-subtitle" class="hide-on-mobile"><%= site.subtitle.html_safe if site.subtitle.present? %></h4>
-			<!-- Everything you want hidden at 980px or less, place within here -->
-			<div class="top-btn-bar btn-toolbar pull-right">
-				<div class="btn-group"><%= link_to(t("book_online"), "http://www.globekey.com/reserve.php?hid=SBH9592", :class => "btn btn-large", :target => :blank, :id => "book-online-btn") %></div>
-				<div class="btn-group"><%= link_to(t("virtual_tour"), @virtual_tours_page.public_url, :class => "btn btn-large visible-desktop", :id => "virtual-tours-btn") if @virtual_tours_page %></div>
-				<%= render 'locales_select' %>
-			</div>
+			<% cache [I18n.locale, site,'headline'] do %>
+				<%= render 'site_title' %>
+				<h4 id="site-subtitle" class="hide-on-mobile"><%= site.subtitle.html_safe if site.subtitle.present? %></h4>
+				<!-- Everything you want hidden at 980px or less, place within here -->
+				<div class="top-btn-bar btn-toolbar pull-right">
+					<div class="btn-group"><%= link_to(t("book_online"), "http://www.globekey.com/reserve.php?hid=SBH9592", :class => "btn btn-large", :target => :blank, :id => "book-online-btn") %></div>
+					<div class="btn-group"><%= link_to(t("virtual_tour"), @virtual_tours_page.public_url, :class => "btn btn-large visible-desktop", :id => "virtual-tours-btn") if @virtual_tours_page %></div>
+					<%= render 'locales_select' %>
+				</div>
+			<% end %>
 		</div>
 	</header>
 	<div id="main-container" class='container-fluid'>
@@ -30,7 +31,9 @@
 	    <% else %>
 		<div class='row-fluid'>
 			<div class="span12">
-			<%= render("images/slideshow", :images => @images) %>
+			<%# cache [I18n.locale, site,'images'], :expires_in => 1.hour do %>
+				<%= render("images/slideshow", :images => @images) %>
+			<%# end %>
 			</div>
 	  	</div>
 		<div id="main-row" class='row-fluid'>

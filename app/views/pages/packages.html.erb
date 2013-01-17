@@ -1,40 +1,43 @@
-<%= render_page_title(resource.title) %>
-<%= render_html_text(resource.body) %>
-<%
-	sections = begin
-		if resource.children.try(:any?)
-			resource.children
-		else
-			resource.self_and_siblings
+<% cache [action_name, I18n.locale, resource.site, resource] do %>
+	<%= render_page_title(resource.title) %>
+	<%= render_html_text(resource.body) %>
+	<%
+		sections = begin
+			if resource.children.try(:any?)
+				resource.children
+			else
+				resource.self_and_siblings
+			end
 		end
-	end
-%>
-<% if sections.try(:any?) %>
-<div class="row-fluid">
+	%>
+	<% if sections.try(:any?) %>
+	<div class="row-fluid">
 	
-	<% sections.in_groups_of(2) do |section_group| %>
-	<ul class="thumbnails">
-		<% section_group.each do |section| %>
-		<li class="span6">
-			<div class="thumbnail">
-			<% if section %>
-				
-				
-				<% if section.images.any? %>
-					<%= link_to(image_fu(section.thumbnail, "670x"), url_for([section]), :class => "remote-diaporama", :remote => true ) %>
-				<% end %>
-				<div class="caption">
-				<h3><%= section.title.html_safe %></h3>	
-				<p><%= truncate_html(strip_tags(section.body), :length => 200, :omission => "...") if section.body.presence %></p>
-				<p><%= link_to(t(:"view_package"), url_for([section]), :class => "btn")%></p>
-				</div>
-			<% end %>
-			</div>
-		</li>
+		<% sections.in_groups_of(2) do |section_group| %>
+		<ul class="thumbnails">
+			<% section_group.each do |section| %>
 		
+			<li class="span6">
+				<div class="thumbnail">
+				<% if section %>
+					<% cache [I18n.locale, section, 'group'] do %>
+						<% if section.images.any? %>
+							<%= link_to(image_fu(section.thumbnail, "670x"), url_for([section]), :class => "remote-diaporama", :remote => true ) %>
+						<% end %>
+						<div class="caption">
+							<h3><%= section.title.html_safe %></h3>	
+							<p><%= truncate_html(strip_tags(section.body), :length => 200, :omission => "...") if section.body.presence %></p>
+							<p><%= link_to(t(:"view_package"), url_for([section]), :class => "btn")%></p>
+						</div>
+					<% end %>
+				<% end %>
+				</div>
+			</li>
+		
+			<% end %>
+			</ul>
 		<% end %>
-		</ul>
-	<% end %>
 
-</div>
+	</div>
+	<% end %>
 <% end %>

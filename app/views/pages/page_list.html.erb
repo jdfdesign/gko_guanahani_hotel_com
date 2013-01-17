@@ -1,36 +1,38 @@
-
+<% cache [action_name, I18n.locale, resource.site, resource] do %>
 	<%= render_page_title(resource.title) %>
 	<%= render_html_text(resource.body) %>
-<%
-	sections = begin
-		if resource.children.try(:any?)
-			resource.children
-		else
-			resource.self_and_siblings
+	<%
+		sections = begin
+			if resource.children.try(:any?)
+				resource.children
+			else
+				resource.self_and_siblings
+			end
 		end
-	end
-%>
-<% if sections.try(:any?) %>
-	<% sections.in_groups_of(2) do |section_group| %>
-	<div class="row-fluid">
-		<ul class="thumbnails">
-		<% section_group.each do |section| %>
-		<li class="span6">
-		<div class="thumbnail">
-			<% if section %>
-			
-			<%= link_to(image_fu(section.thumbnail, "670x"), url_for([section]), :class => "remote-diaporama", :remote => true ) if section.images.any? %>
-			<div class="caption">
-				<h3><%= section.title.html_safe if section.title %></h3>
-				<p><%= render_html_text(section.body) %></p>
-				<p><%= link_to(t(:"view_diaporama"), url_for([section]), :class => "btn remote-diaporama", :remote => true ) if section.images.any?%>
-				<%= link_to(t(:"view_virtual_visit"), "/assets/#{section.video_name}.mov", :class => "btn virtual-tour" ) if section.video_name.presence %></p>
+	%>
+	<% if sections.try(:any?) %>
+		<% sections.in_groups_of(2) do |section_group| %>
+		<div class="row-fluid">
+			<ul class="thumbnails">
+			<% section_group.each do |section| %>
+			<li class="span6">
+			<div class="thumbnail">
+				<% if section %>
+					<% cache [I18n.locale, section, 'group'] do %>
+						<%= link_to(image_fu(section.thumbnail, "670x"), url_for([section]), :class => "remote-diaporama", :remote => true ) if section.images.any? %>
+						<div class="caption">
+							<h3><%= section.title.html_safe if section.title %></h3>
+							<p><%= render_html_text(section.body) %></p>
+							<p><%= link_to(t(:"view_diaporama"), url_for([section]), :class => "btn remote-diaporama", :remote => true ) if section.images.any?%>
+							<%= link_to(t(:"view_virtual_visit"), "/assets/#{section.video_name}.mov", :class => "btn virtual-tour" ) if section.video_name.presence %></p>
+						</div>
+					<% end %>
+				<% end %>
 			</div>
+			</li>
 			<% end %>
+			</ul>
 		</div>
-		</li>
 		<% end %>
-		</ul>
-	</div>
 	<% end %>
 <% end %>

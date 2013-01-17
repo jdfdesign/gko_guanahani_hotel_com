@@ -1,13 +1,15 @@
-<% if site.frontend_translated? %>
-<div class="btn-group">
-		<a class="btn btn-large dropdown-toggle" data-toggle="dropdown" href="#" id="locales-btn">
-			<%= t(:"locale_select_title") %>
-			<span class="caret"></span>
-		</a>
-      <ul id='locales' class="dropdown-menu">
-        <% site.available_locales.each do |language| %>
-			<li><%= link_to(language.presentation, root_url(:locale => language.code), :class => [language.code.to_s, 'navbar-link']) %></li>
-        <% end %>
-      </ul>
-</div>
+<% cache [I18n.locale, site,'locales_select'] do %>
+	<% if site.frontend_translated? %>
+		<div class="btn-group">
+				<a class="btn btn-large dropdown-toggle" data-toggle="dropdown" href="#" id="locales-btn">
+					<%= t(:"locale_select_title") %>
+					<span class="caret"></span>
+				</a>
+		      <ul id='locales' class="dropdown-menu">
+		        <% site.available_locales.each do |language| %>
+					<li><%= link_to(language.presentation, root_url(:locale => language.code), :class => [language.code.to_s, 'navbar-link']) %></li>
+		        <% end %>
+		      </ul>
+		</div>
+	<% end %>
 <% end %>
