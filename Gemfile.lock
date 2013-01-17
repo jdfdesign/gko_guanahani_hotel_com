@@ -1,17 +1,17 @@
 GIT
   remote: git@github.com:jdfdesign/gko_cms3.git
-  revision: ab840d53c597378be3474d8e899f734e8e5c11f4
+  revision: 6f2e0231071737d06fed88b52fddf4bf891442f5
   specs:
-    gko_albums (0.5.59)
-    gko_auth (0.5.59)
+    gko_albums (0.6.06)
+    gko_auth (0.6.06)
       cancan (>= 1.6.8)
       devise (>= 2.1.2)
-    gko_blog (0.5.59)
-      gko_categories (= 0.5.59)
-      gko_core (= 0.5.59)
-      gko_stickers (= 0.5.59)
-    gko_categories (0.5.59)
-    gko_core (0.5.59)
+    gko_blog (0.6.06)
+      gko_categories (= 0.6.06)
+      gko_core (= 0.6.06)
+      gko_stickers (= 0.6.06)
+    gko_categories (0.6.06)
+    gko_core (0.6.06)
       RedCloth (= 4.2.9)
       activesupport-slices (= 0.0.2)
       acts_as_indexed (~> 0.7.7)
@@ -46,20 +46,21 @@ GIT
       rmagick (~> 2.13.1)
       routing-filter (= 0.3.1)
       rubyzip (= 0.9.6.1)
-      sass-rails (~> 3.2.5)
+      sass-rails (~> 3.2.6)
       simple_form (~> 2.0.4)
+      to_xls (~> 1.5.1)
       truncate_html (= 0.5.5)
       uglifier (>= 1.0.3)
       uuid (= 2.3.5)
       will_paginate (~> 3.0.2)
-    gko_documents (0.5.59)
+    gko_documents (0.6.06)
       dragonfly (~> 0.9.8)
       rack-cache (>= 0.5.3)
-    gko_image_bank (0.5.59)
-    gko_images (0.5.59)
-    gko_inquiries (0.5.59)
+    gko_image_bank (0.6.06)
+    gko_images (0.6.06)
+    gko_inquiries (0.6.06)
       filters_spam (~> 0.2)
-    gko_stickers (0.5.59)
+    gko_stickers (0.6.06)
 
 GEM
   remote: http://rubygems.org/
@@ -103,13 +104,13 @@ GEM
     bcrypt-ruby (3.0.1)
     builder (3.0.4)
     cancan (1.6.8)
-    capistrano (2.13.5)
+    capistrano (2.14.1)
       highline
       net-scp (>= 1.0.0)
       net-sftp (>= 2.0.0)
       net-ssh (>= 2.0.14)
       net-ssh-gateway (>= 1.1.0)
-    carrierwave (0.7.1)
+    carrierwave (0.8.0)
       activemodel (>= 3.2.0)
       activesupport (>= 3.2.0)
     codemirror-rails (3.00)
@@ -127,7 +128,7 @@ GEM
       gherkin (~> 2.9.0)
       json (>= 1.4.6)
       term-ansicolor (>= 1.0.6)
-    devise (2.1.2)
+    devise (2.2.2)
       bcrypt-ruby (~> 3.0)
       orm_adapter (~> 0.1)
       railties (~> 3.1)
@@ -200,9 +201,10 @@ GEM
       net-ssh (>= 1.99.1)
     net-sftp (2.0.5)
       net-ssh (>= 2.0.9)
-    net-ssh (2.6.2)
+    net-ssh (2.6.3)
     net-ssh-gateway (1.1.0)
       net-ssh (>= 1.99.1)
+    newrelic_rpm (3.5.5.38)
     open4 (1.3.0)
     orm_adapter (0.4.0)
     paper_trail (2.7.0)
@@ -243,9 +245,10 @@ GEM
     rmagick (2.13.1)
     routing-filter (0.3.1)
       actionpack
+    ruby-ole (1.2.11.6)
     rubyzip (0.9.6.1)
-    sass (3.2.4)
-    sass-rails (3.2.5)
+    sass (3.2.5)
+    sass-rails (3.2.6)
       railties (~> 3.2.0)
       sass (>= 3.1.10)
       tilt (~> 1.3)
@@ -253,6 +256,8 @@ GEM
       actionpack (~> 3.0)
       activemodel (~> 3.0)
     simple_oauth (0.1.9)
+    spreadsheet (0.7.6)
+      ruby-ole (>= 1.0)
     sprockets (2.1.3)
       hike (~> 1.2)
       rack (~> 1.0)
@@ -270,6 +275,8 @@ GEM
       mime-types (~> 1.19)
       multi_json (~> 1.5)
       twitter-stream (~> 0.1)
+    to_xls (1.5.1)
+      spreadsheet
     treetop (1.4.12)
       polyglot
       polyglot (>= 0.3.1)
@@ -286,22 +293,23 @@ GEM
       macaddr (~> 1.0)
     warden (1.2.1)
       rack (>= 1.0)
-    will_paginate (3.0.3)
+    will_paginate (3.0.4)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   coffee-rails (~> 3.2.2)
-  gko_albums (= 0.5.59)!
-  gko_auth (= 0.5.59)!
-  gko_blog (= 0.5.59)!
-  gko_categories (= 0.5.59)!
-  gko_core (= 0.5.59)!
-  gko_documents (= 0.5.59)!
-  gko_image_bank (= 0.5.59)!
-  gko_images (= 0.5.59)!
-  gko_inquiries (= 0.5.59)!
-  gko_stickers (= 0.5.59)!
-  sass-rails (~> 3.2.5)
+  gko_albums (= 0.6.06)!
+  gko_auth (= 0.6.06)!
+  gko_blog (= 0.6.06)!
+  gko_categories (= 0.6.06)!
+  gko_core (= 0.6.06)!
+  gko_documents (= 0.6.06)!
+  gko_image_bank (= 0.6.06)!
+  gko_images (= 0.6.06)!
+  gko_inquiries (= 0.6.06)!
+  gko_stickers (= 0.6.06)!
+  newrelic_rpm
+  sass-rails (~> 3.2.6)
   uglifier (>= 1.0.3)

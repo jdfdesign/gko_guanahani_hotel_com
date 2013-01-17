@@ -1887,7 +1887,7 @@ table .span24 {
   *margin-right: .3em;
   line-height: 14px;
   vertical-align: text-top;
-  background-image: url(/assets/twitter/bootstrap/glyphicons-halflings.png);
+  background-image: url(/assets/twitter/bootstrap/glyphicons-halflings-ab3144065a860d198f1d7d9a4882640c.png);
   background-position: 14px 14px;
   background-repeat: no-repeat;
 }
@@ -1899,7 +1899,7 @@ table .span24 {
 
 /* line 29, ../../../../.rvm/gems/ruby-1.8.7-p358@global/bundler/gems/gko_cms3-6f2e02310717/gko_core/vendor/assets/stylesheets/twitter.2.0.4/bootstrap/_sprites.scss */
 .icon-white {
-  background-image: url(/assets/twitter/bootstrap/glyphicons-halflings-white.png);
+  background-image: url(/assets/twitter/bootstrap/glyphicons-halflings-white-13553a5bf21ae3cc374006592488ec64.png);
 }
 
 /* line 33, ../../../../.rvm/gems/ruby-1.8.7-p358@global/bundler/gems/gko_cms3-6f2e02310717/gko_core/vendor/assets/stylesheets/twitter.2.0.4/bootstrap/_sprites.scss */
@@ -5598,7 +5598,7 @@ aside > section {
 
 /* line 68, ../../../../.rvm/gems/ruby-1.8.7-p358@global/bundler/gems/gko_cms3-6f2e02310717/gko_core/app/assets/stylesheets/gko/public/_default.scss */
 .missing-document-preview {
-  background: transparent url(/assets/gko/icon_pdf_grey_light_x110.png) left center no-repeat;
+  background: transparent url(/assets/gko/icon_pdf_grey_light_x110-aa942955ac89ec6a8cfc236c40b42cc3.png) left center no-repeat;
   min-height: 110px;
 }
 
@@ -5895,7 +5895,7 @@ footer .nav > li > a:hover {
   width: 12px;
   height: 12px;
   margin-right: 5px;
-  background: #dddddd url(/assets/dot.png) no-repeat;
+  background: #dddddd url(/assets/dot-19ab0df5683a8d6063a6a8244aa0f261.png) no-repeat;
   float: left;
   cursor: pointer;
   font: 0/0 a;
@@ -5926,7 +5926,7 @@ footer .nav > li > a:hover {
   right: 10px;
   z-index: 2;
   display: none;
-  background: url(/assets/galleria/themes/classic/classic-loader.gif) no-repeat 2px 2px;
+  background: url(/assets/galleria/themes/classic/classic-loader-c15cb1a279a0b8df9fcab677017eadaf.gif) no-repeat 2px 2px;
 }
 
 /* line 75, ../../app/assets/stylesheets/_galleria.scss */
@@ -6125,7 +6125,7 @@ footer .nav > li > a:hover {
 .galleria-info-close,
 .galleria-image-nav-left,
 .galleria-image-nav-right {
-  background-image: url(/assets/galleria/themes/classic/classic-map.png);
+  background-image: url(/assets/galleria/themes/classic/classic-map-82b2f4c1f537fead42dcd3a468072b73.png);
   background-repeat: no-repeat;
 }
 
@@ -6181,7 +6181,7 @@ a:focus,
   text-shadow: none;
   background-color: transparent;
   border: 0;
-  background: white url(/assets/logo.gif) center center no-repeat;
+  background: white url(/assets/logo-01c97608fa52907147c02551c8388a30.gif) center center no-repeat;
   background-size: contain;
 }
 
