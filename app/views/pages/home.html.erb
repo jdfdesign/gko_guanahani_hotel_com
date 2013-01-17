@@ -1,1 +1,3 @@
-<%= render_html_text(resource.body) %>
+<% cache [action_name, I18n.locale, resource.site, resource] do %>
+	<%= render_html_text(resource.body) %>
+<% end %>

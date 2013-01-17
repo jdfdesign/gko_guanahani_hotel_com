@@ -1,23 +1,12 @@
 <%= render_secondary_menu %>
-<%= render_collection_header %>
-<% parent.categories.order('categories.title').each do |c| %>
-	<h3><%= c.title %></h3>
-	<%= content_tag(:section, :class => "grid-container image_bank_photos") do %>
-    	<%= grid_tag(5) do %>
-			<% c.categorizations.each do |r| %>
-				<% image_bank_photo = r.categorizable %>
-				<%= content_tag_for(:li, image_bank_photo) do %>
-			  	<div class="thumbnail">
-					<%= content_tag(:div, :class => 'image') do %>
-						<%= link_to(image_tag(image_bank_photo.source.url(:thumb),:class => "thumb"), image_bank_photo.source.url, :target => :blank) %>
-					<% end %>
-					<%= grid_item_caption_tag do %>
-						<p><%= "ref: #{image_bank_photo.id} / #{number_to_human_size(image_bank_photo.size)}" %></p>
-						<p><%= image_bank_photo.author if image_bank_photo.author.presence %></p>
-					<% end %>
-				</div>
-				<% end %>
+<% cache [action_name, I18n.locale, parent.site, parent] do %>
+	<%= render_collection_header %>
+	<% @parent_categories.each do |c| %>
+		<% if c.image_bank_photos.any? %>
+			<h3><%= c.title %></h3>
+			<%= grid_tag(@image_bank.column_count) do %>
+				<%= render c.image_bank_photos %>
 			<% end %>
-    	<% end %>
-    <% end %>
+		<% end %>
+	<% end %>
 <% end %>

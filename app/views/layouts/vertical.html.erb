@@ -1,9 +1,6 @@
-<% 
-@virtual_tours_page = site.pages.find_by_name("virtual-tours") 
-@images = resource.parent.images if resource && resource.respond_to?(:leaf?) && resource.leaf?
-@images ||= site.home.images
-%>
-
+<% @source_images = resource.parent.images if resource && resource.respond_to?(:leaf?) && resource.leaf? %>
+<% @images = resource.parent.images if resource && resource.respond_to?(:leaf?) && resource.leaf? %>
+<% @images ||= site.home.images %>
 <!doctype html>
 <%= render 'html_tag' %>
 <%= render 'head' %>
@@ -14,6 +11,7 @@
 	<header class="container-fluid">
 		<div class='row-fluid'>
 			<% cache [I18n.locale, site,'headline'] do %>
+				<% @virtual_tours_page = site.pages.find_by_name("virtual-tours") %>
 				<%= render 'site_title' %>
 				<h4 id="site-subtitle" class="hide-on-mobile"><%= site.subtitle.html_safe if site.subtitle.present? %></h4>
 				<!-- Everything you want hidden at 980px or less, place within here -->
@@ -31,9 +29,9 @@
 	    <% else %>
 		<div class='row-fluid'>
 			<div class="span12">
-			<%# cache [I18n.locale, site,'images'], :expires_in => 1.hour do %>
+			<% cache ['slideshow', I18n.locale, site] do %>
 				<%= render("images/slideshow", :images => @images) %>
-			<%# end %>
+			<% end %>
 			</div>
 	  	</div>
 		<div id="main-row" class='row-fluid'>
@@ -58,8 +56,8 @@
   	</div>
 
 	</div>
-	  <%= render 'footer' %>
-	  <%= render 'copyright' %>
+	<%= render 'footer' %>
+	<%= render 'copyright' %>
 	<%= render 'javascripts' %>
 </body>
 </html>
