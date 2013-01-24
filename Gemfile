@@ -7,7 +7,7 @@ group :assets do
 end
 
 prod_location = 'git@github.com:jdfdesign/gko_cms3.git'
-prod_version = "= 0.6.15"
+prod_version = "= 0.6.16"
 group :production do
 	gem 'gko_core', prod_version, :git => prod_location
 	gem 'gko_auth', prod_version, :git => prod_location
@@ -19,7 +19,7 @@ group :production do
   gem 'gko_image_bank', prod_version, :git => prod_location
   gem 'gko_blog', prod_version, :git => prod_location
   gem 'gko_stickers', prod_version, :git => prod_location
-  #gem 'newrelic_rpm'
+  gem 'newrelic_rpm'
 end
 #group :development do
 #	gem "gko_core", :path => '~/Github/gko_cms3/gko_core'
