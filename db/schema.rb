@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130105132327) do
+ActiveRecord::Schema.define(:version => 20130128234953) do
 
   create_table "accounts", :force => true do |t|
     t.string   "reference",  :limit => 40
@@ -81,14 +81,6 @@ ActiveRecord::Schema.define(:version => 20130105132327) do
 
   add_index "category_translations", ["category_id"], :name => "index_category_translations_on_category_id"
   add_index "category_translations", ["locale"], :name => "index_category_translations_on_locale"
-
-  create_table "configurations", :force => true do |t|
-    t.integer  "site_id"
-    t.string   "name"
-    t.string   "type",       :limit => 50
-    t.datetime "created_at",               :null => false
-    t.datetime "updated_at",               :null => false
-  end
 
   create_table "content_translations", :force => true do |t|
     t.integer  "content_id"
@@ -207,47 +199,6 @@ ActiveRecord::Schema.define(:version => 20130105132327) do
     t.string   "document_uid"
     t.string   "document_ext"
   end
-
-  create_table "element_images", :id => false, :force => true do |t|
-    t.integer  "site_id"
-    t.integer  "section_id"
-    t.integer  "image_id"
-    t.string   "title"
-    t.string   "caption"
-    t.string   "link"
-    t.string   "link_target"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
-  end
-
-  add_index "element_images", ["image_id"], :name => "index_element_images_on_image_id"
-  add_index "element_images", ["section_id"], :name => "index_element_images_on_section_id"
-  add_index "element_images", ["site_id"], :name => "index_element_images_on_site_id"
-
-  create_table "field_types", :force => true do |t|
-    t.string   "name"
-    t.string   "presentation"
-    t.string   "value_type"
-    t.integer  "site_id"
-    t.string   "class_name"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
-  end
-
-  add_index "field_types", ["name"], :name => "index_field_types_on_name"
-  add_index "field_types", ["site_id", "class_name"], :name => "index_field_types_on_site_id_and_class_name"
-
-  create_table "field_values", :force => true do |t|
-    t.integer  "field_type_id"
-    t.integer  "customizable_id"
-    t.string   "customizable_type"
-    t.text     "body"
-    t.datetime "created_at",        :null => false
-    t.datetime "updated_at",        :null => false
-  end
-
-  add_index "field_values", ["customizable_id", "customizable_type"], :name => "index_field_values_on_customizable_id_and_customizable_type"
-  add_index "field_values", ["field_type_id"], :name => "index_field_values_on_field_type_id"
 
   create_table "image_assignments", :force => true do |t|
     t.integer  "position",                      :default => 1, :null => false
@@ -572,14 +523,6 @@ ActiveRecord::Schema.define(:version => 20130105132327) do
 
   add_index "stickings", ["stickable_id", "stickable_type"], :name => "index_stickings_on_stickable_id_and_stickable_type"
   add_index "stickings", ["sticker_id"], :name => "index_stickings_on_sticker_id"
-
-  create_table "supports", :force => true do |t|
-    t.integer "owner_id"
-    t.string  "owner_type"
-    t.text    "infos"
-  end
-
-  add_index "supports", ["owner_id", "owner_type"], :name => "index_supports_on_owner_id_and_owner_type", :unique => true
 
   create_table "tokenized_permissions", :force => true do |t|
     t.integer  "permissable_id"
