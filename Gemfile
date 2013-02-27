@@ -19,7 +19,7 @@ group :production do
     gem 'gko_blog'
     gem 'gko_stickers'
   end
-  gem 'newrelic_rpm'
+  #gem 'newrelic_rpm'
 end
 #group :development do
 #	gem "gko_core", :path => '~/Github/gko_cms3/gko_core'
