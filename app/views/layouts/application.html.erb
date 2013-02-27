@@ -1,0 +1,63 @@
+<% @source_images = resource.parent.images if resource && resource.respond_to?(:leaf?) && resource.leaf? %>
+<% @images = resource.parent.images if resource && resource.respond_to?(:leaf?) && resource.leaf? %>
+<% @images ||= site.home.images %>
+<!doctype html>
+<%= render 'html_tag' %>
+<%= render 'head' %>
+<body id='<%= @body_id %>' class="<%= @images.any? ? 'slideshow' : 'noslideshow' %>">
+<!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+
+<div id="wrapper-wide-body">
+	<header class="container-fluid">
+		<div class='row-fluid'>
+			<% cache [I18n.locale, site,'headline'] do %>
+				<% @virtual_tours_page = site.pages.find_by_name("virtual-tours") %>
+				<%= render 'site_title' %>
+				<h4 id="site-subtitle" class="hide-on-mobile"><%= site.subtitle.html_safe if site.subtitle.present? %></h4>
+				<!-- Everything you want hidden at 980px or less, place within here -->
+				<div class="top-btn-bar btn-toolbar pull-right">
+					<div class="btn-group"><%= link_to(t("book_online"), "http://www.globekey.com/reserve.php?hid=SBH9592", :class => "btn btn-large", :target => :blank, :id => "book-online-btn") %></div>
+					<div class="btn-group"><%= link_to(t("virtual_tour"), @virtual_tours_page.public_url, :class => "btn btn-large visible-desktop", :id => "virtual-tours-btn") if @virtual_tours_page %></div>
+					<%= render 'locales_select' %>
+				</div>
+			<% end %>
+		</div>
+	</header>
+	<div id="main-container" class='container-fluid'>
+		<% if content_for?(:page_container) %>
+	        <%= yield :page_container %>
+	    <% else %>
+		<div class='row-fluid'>
+			<div class="span12">
+			<% cache(['slideshow-home', I18n.locale, site]) do %>
+				<%= render("images/slideshow", :images => @images) %>
+			<% end %>
+			</div>
+	  	</div>
+		<div id="main-row" class='row-fluid'>
+			<div class="span3">
+				<!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+				<a class="btn btn-navbar" data-toggle="collapse" data-target="#primary-menu">
+					<span><%= t(:navigation_menu) %><i class="icon-chevron-down icon-white"></i></span>
+		        </a>
+					<nav id="primary-menu" class="primary-menu-container nav-collapse collapse">
+						<%= render_primary_menu %>
+					</nav>
+			</div>
+			<div class='span9 main-content'>
+				<%= render "layouts/messages" %>
+				<%= yield %>
+				<% if content_for?(:sidebar) %>
+			        <%= yield :sidebar %>
+			    <% end %>
+			</div>
+		</div>
+		<% end %>
+  	</div>
+
+	</div>
+	<%= render 'footer' %>
+	<%= render 'copyright' %>
+	<%= render 'javascripts' %>
+</body>
+</html>
