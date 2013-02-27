@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130128234953) do
+ActiveRecord::Schema.define(:version => 20130227085018) do
 
   create_table "accounts", :force => true do |t|
     t.string   "reference",  :limit => 40
@@ -497,6 +497,7 @@ ActiveRecord::Schema.define(:version => 20130128234953) do
     t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "path"
   end
 
   add_index "sticker_translations", ["locale"], :name => "index_sticker_translations_on_locale"
@@ -508,6 +509,7 @@ ActiveRecord::Schema.define(:version => 20130128234953) do
     t.integer  "section_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "path"
   end
 
   add_index "stickers", ["name"], :name => "index_stickers_on_name"

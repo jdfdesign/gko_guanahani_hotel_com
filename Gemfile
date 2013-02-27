@@ -7,7 +7,7 @@ group :assets do
 end
 
 group :production do
-  git "git@github.com:jdfdesign/gko_cms3.git", :branch => "0.6.24-stable" do
+  git "git@github.com:jdfdesign/gko_cms3.git", :branch => "v0.6.24.RC10" do
   	gem 'gko_core'
   	gem 'gko_auth'
   	gem 'gko_images'
