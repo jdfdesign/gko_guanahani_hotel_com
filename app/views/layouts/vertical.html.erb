@@ -29,7 +29,7 @@
 	    <% else %>
 		<div class='row-fluid'>
 			<div class="span12">
-			<% cache(['slideshow', I18n.locale, site], :expires_in => 1.hour) do %>
+			<% cache(['slideshow-home', I18n.locale, site]) do %>
 				<%= render("images/slideshow", :images => @images) %>
 			<% end %>
 			</div>
