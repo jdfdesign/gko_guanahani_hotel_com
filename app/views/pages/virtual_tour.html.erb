@@ -1,4 +1,4 @@
-<% cache [action_name, I18n.locale, resource.site, resource] do %>
+<% cache [action_name, I18n.locale, resource.site, resource, 'virtual_tours'] do %>
 	<%= render_page_title(resource.title) %>
 	<%= render_html_text(resource.body) %>
 	<%
@@ -39,6 +39,32 @@
 			 :video => "serenity-suite" },
 			{:title => "Wellness suite",
 			 :video => "wellness-suite" },
+			{:title => "Ocean view suite - 1 room (2)",
+			 :video => "Chbre_2_suite_1_chbre_vue_mer" },
+			{:title => "Ocean view suite with pool (3)",
+			 :video => "Chbre_3_suite_piscine_vue_mer" },
+			{:title => "Garden view suite with pool- 2 rooms (9)",
+			 :video => "Chbre_9_suite_piscine_vue_jardin" },
+			{:title => "Garden view suite - 2 rooms (10)",
+			 :video => "Chbre_10_suite_vue_jardin" },
+			{:title => "Garden view suite - 2 rooms (14)",
+			 :video => "Chbre_14_suite_piscine_vue_jardin_2_chbres" },
+			{:title => "Garden view suite (15)",
+			 :video => "Chbre_15_suite_vue_jardin" },
+			{:title => "Ocean view suite - 2 rooms  (17)",
+			 :video => "Chbre_17_suite_vue_mer_2_chbres" },
+			{:title => "Ocean view suite (19)",
+			 :video => "Chbre_19_suite_vue_mer" },
+			{:title => "Ocean view suite with pool (22)",
+			 :video => "Chbre_22_suite_piscine_vue_mer" },
+			{:title => "Ocean view suite with pool (23)",
+			 :video => "Chbre_23_suite_piscine_vue_mer" },
+			{:title => "Garden view suite (43)",
+			 :video => "Chbre_43_suite_vue_jardin" },
+			{:title => "Deluxe room 49",
+			 :video => "Chbre_49_chambre_deluxe" },
+			{:title => "Deluxe room 54",
+			 :video => "Chbre_54_chambre_deluxe" },
 			{:title => "Indigo",
 			 :video => "indigo" },
 			{:title => "Indigo on the beach",
@@ -47,10 +73,14 @@
 			 :video => "bartolomeo" },
 			{:title => "Beach bar",
 			 :video => "beach-bar" },
-			{:title => "Concierge",
-			 :video => "concierge" },
+			#{:title => "Concierge",
+			# :video => "concierge" },
 			{:title => "Spa",
-			 :video => "spa" }
+			 :video => "spa" },
+			{:title => "Garden",
+			 :video => "jardin" },
+			{:title => "Reception desk",
+			 :video => "recep" }
 		]
 	%>
 

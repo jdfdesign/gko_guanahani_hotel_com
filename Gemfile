@@ -13,7 +13,7 @@ group :production do
   	gem 'gko_images'
   	gem 'gko_albums'
   	gem 'gko_documents'
-  	gem 'gko_inquiries'
+ 	gem 'gko_inquiries'
     gem 'gko_categories'
     gem 'gko_image_bank'
     gem 'gko_blog'
