@@ -1,7 +1,7 @@
 GIT
   remote: git@github.com:jdfdesign/gko_cms3.git
-  revision: 57edcd12cb9b95e7799049a9419a35c9a1400968
-  tag: v0.6.24.RC15
+  revision: 8b3db307f22d4180fc3f8f91d6ebb8ced9ef0554
+  tag: v0.6.24.RC16
   specs:
     gko_albums (0.6.24.RC15)
     gko_auth (0.6.24.RC15)
