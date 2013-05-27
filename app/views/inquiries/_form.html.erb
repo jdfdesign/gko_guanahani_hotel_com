@@ -4,7 +4,7 @@
 %>
 <%= simple_form_for(:inquiry, :url => inquiries_path, :method => :post,
                     :html => {:class => [:'form-horizontal', :inquiry]}) do |form| %>
-    <%= hidden_field_tag(:return_to, request.url) %>
+    <%= hidden_field_tag(:return_to, url_for([resource])) %>
     <%= form.hidden_field :site_id, :value => site.id %>
     <%= form.error_notification %>
 

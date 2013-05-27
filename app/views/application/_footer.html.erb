@@ -1,39 +1,45 @@
-<% cache [I18n.locale, site,'footer'] do %>
+<%# cache [I18n.locale, site,'footer'] do %>
 <!-- Footer
 ================================================== -->
  <footer id='footer-container' class='container-fluid hide-on-print'>
    <div id='footer' class='row-fluid'>
      <div class="span3">
-	    <h3><%= t(:'titles.pro')%></h3>
-		<%= render_menu('pipe') %>
-	 </div>
-     <div class="span3">
-		<h3><%= t(:'titles.tools')%></h3>
-		<%= render_menu('tools') %></div>
-     <div class="span3">
-		<h3><%= t(:'titles.contact')%></h3>
-		<p><%= raw "Toll&nbsp;Free&nbsp;(US)&nbsp;: 1&nbsp;800&nbsp;216&nbsp;3774" %><br>
-		<%= raw "N°&nbsp;Vert&nbsp;(FR)&nbsp;: 08 05 96&nbsp;57&nbsp;90" %><br>
-		<%= raw "Standard&nbsp;: 0&nbsp;(+590)&nbsp;590&nbsp;276&nbsp;660" %><br>
-		<%= raw "Fax&nbsp;: 0&nbsp;(+590)&nbsp;590&nbsp;277&nbsp;070" %><br>
-		<%= raw "E-mail&nbsp;: hotel@leguanahani.com" %><br>
-		</p>
-		<p><%= link_to(image_tag("fb.png"), "http://www.facebook.com/HotelGuanahani", :target => :blank)%></p>
-		
-		<p><%= link_to(image_tag("tw.png"), "http://twitter.com/HotelGuanahani", :target => :blank)%></p>
-		
-	 </div> 
-     <div class="span3" style="text-align:center;">
-        <p><img src='/assets/leading-hotel-logo.jpg' class="hide-on-mobile"></p>
-		<p><img src='/assets/2013-CNJ-Logo.png' class="hide-on-mobile"></p>
-		<div id="TA_certificateOfExcellence63" class="TA_certificateOfExcellence">
-		<ul id="9stbAU" class="TA_links q0ssgAsg">
-		<li id="Zvy1Fk4wS" class="VWTSdeQrAI"><a href=http://www.tripadvisor.com/Hotel_Review-g147341-d184612-Reviews-Hotel_Guanahani_Spa-Grand_Cul_de_Sac_St_Barthelemy.html>Hotel Guanahani & Spa</a></li>
-		</ul>
-		</div>
-		<script src="http://www.jscache.com/wejs?wtype=certificateOfExcellence&amp;uniq=63&amp;locationId=184612&amp;lang=en_US&amp;year=2012"></script>
-
-	</div>
-   </div>
+       <h3><%= t(:'titles.pro')%></h3>
+		   <%= render_menu('pipe') %>
+	   </div>
+    <div class="span3">
+		  <h3><%= t(:'titles.tools')%></h3>
+      <%= render_menu('tools') %>
+    </div>
+    <div class="span3">
+		  <h3><%= t(:'titles.contact')%></h3>
+		  <p><%= raw "Toll&nbsp;Free&nbsp;(US)&nbsp;: 1&nbsp;800&nbsp;216&nbsp;3774" %><br>
+		  <%= raw "N°&nbsp;Vert&nbsp;(FR)&nbsp;: 08 05 96&nbsp;57&nbsp;90" %><br>
+		  <%= raw "Standard&nbsp;: 0&nbsp;(+590)&nbsp;590&nbsp;276&nbsp;660" %><br>
+		  <%= raw "Fax&nbsp;: 0&nbsp;(+590)&nbsp;590&nbsp;277&nbsp;070" %><br>
+		  <%= raw "E-mail&nbsp;: hotel@leguanahani.com" %><br>
+		  </p>
+		  <p><%= link_to(image_tag("fb.png"), "http://www.facebook.com/HotelGuanahani", :target => :blank)%></p>
+      <p><%= link_to(image_tag("tw.png"), "http://twitter.com/HotelGuanahani", :target => :blank)%></p>
+    </div> 
+    <div class="span3" style="text-align:center;">
+      <p><img src='/assets/leading-hotel-logo.jpg' class="hide-on-mobile"></p>
+      <p><img src='/assets/2013-CNJ-Logo.png' class="hide-on-mobile"></p>
+      <!--
+      <div id="TA_certificateOfExcellence63" class="TA_certificateOfExcellence">
+        <ul id="9stbAU" class="TA_links q0ssgAsg">
+          <li id="Zvy1Fk4wS" class="VWTSdeQrAI"><a href=http://www.tripadvisor.com/Hotel_Review-g147341-d184612-Reviews-Hotel_Guanahani_Spa-Grand_Cul_de_Sac_St_Barthelemy.html>Hotel Guanahani & Spa</a></li>
+        </ul>
+      </div>
+      <script src="http://www.jscache.com/wejs?wtype=certificateOfExcellence&amp;uniq=63&amp;locationId=184612&amp;lang=en_US&amp;year=2012"></script> 
+       -->
+      <div id="TA_certificateOfExcellence929" class="TA_certificateOfExcellence">
+        <ul id="tzPvpjCza8" class="TA_links WO1hZW9hlPJ">
+          <li id="dNP0DOF5bCdJ" class="PwooHlHvy3I"><a href="http://www.tripadvisor.com/Hotel_Review-g147341-d184612-Reviews-Hotel_Guanahani_Spa-Grand_Cul_de_Sac_St_Barthelemy.html">Hotel Guanahani & Spa</a></li>
+        </ul>
+      </div>
+      <script src="http://www.jscache.com/wejs?wtype=certificateOfExcellence&amp;uniq=929&amp;locationId=184612&amp;lang=en_US&amp;year=2013"></script>
+    </div>
+  </div>
  </footer>
-<% end %>
+<%# end %>
