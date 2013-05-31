@@ -2,12 +2,12 @@
 //= require jquery_ujs
 //= require gko/public/jquery.grid.responsive.js
 //= require gko/public/jquery.bootstrap.navbarhover.js
-//= require twitter/bootstrap/transition.js
-//= require twitter/bootstrap/alert.js
-//= require twitter/bootstrap/button.js
-//= require twitter/bootstrap/collapse.js
-//= require twitter/bootstrap/dropdown.js
-//= require twitter/bootstrap/modal.js
+//= require twitter.bootstrap.2.0.4/bootstrap/transition.js
+//= require twitter.bootstrap.2.0.4/bootstrap/alert.js
+//= require twitter.bootstrap.2.0.4/bootstrap/button.js
+//= require twitter.bootstrap.2.0.4/bootstrap/collapse.js
+//= require twitter.bootstrap.2.0.4/bootstrap/dropdown.js
+//= require twitter.bootstrap.2.0.4/bootstrap/modal.js
 //= require gko/gko.galleria
 $(document).ready(function() {
     f_init_galleria = function() {
