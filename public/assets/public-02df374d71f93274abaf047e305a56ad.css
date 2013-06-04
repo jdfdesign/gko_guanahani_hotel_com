@@ -1887,7 +1887,7 @@ table .span24 {
   *margin-right: .3em;
   line-height: 14px;
   vertical-align: text-top;
-  background-image: url(/assets/twitter/bootstrap/glyphicons-halflings.png);
+  background-image: url(/assets/twitter/bootstrap/glyphicons-halflings-2851b489e8c39f8fad44fc10efb99c3e.png);
   background-position: 14px 14px;
   background-repeat: no-repeat;
 }
@@ -1899,7 +1899,7 @@ table .span24 {
 
 /* line 29, ../../../../.rvm/gems/ruby-1.8.7-p370/bundler/gems/gko_cms3-52ce375a29ca/gko_core/vendor/assets/stylesheets/twitter.bootstrap.2.0.4/bootstrap/_sprites.scss */
 .icon-white {
-  background-image: url(/assets/twitter/bootstrap/glyphicons-halflings-white.png);
+  background-image: url(/assets/twitter/bootstrap/glyphicons-halflings-white-6cccd17a7aed91dbc0157d343c68c0d9.png);
 }
 
 /* line 33, ../../../../.rvm/gems/ruby-1.8.7-p370/bundler/gems/gko_cms3-52ce375a29ca/gko_core/vendor/assets/stylesheets/twitter.bootstrap.2.0.4/bootstrap/_sprites.scss */
@@ -5577,7 +5577,7 @@ aside > section {
 
 /* line 53, ../../../../.rvm/gems/ruby-1.8.7-p370/bundler/gems/gko_cms3-52ce375a29ca/gko_core/app/assets/stylesheets/gko/public/_default.scss */
 .missing-document-preview {
-  background: transparent url(/assets/gko/icon_pdf_grey_light_x110.png) left center no-repeat;
+  background: transparent url(/assets/gko/icon_pdf_grey_light_x110-d825c44fddb67d9997a6c30644ec1433.png) left center no-repeat;
   min-height: 110px;
 }
 
@@ -5892,7 +5892,7 @@ abbr[title], abbr[data-original-title] {
   width: 12px;
   height: 12px;
   margin-right: 5px;
-  background: #dddddd url(/assets/dot.png) no-repeat;
+  background: #dddddd url(/assets/dot-a37748f1d8cd02bf6ce7d14118637dc2.png) no-repeat;
   float: left;
   cursor: pointer;
   font: 0/0 a;
@@ -5923,7 +5923,7 @@ abbr[title], abbr[data-original-title] {
   right: 10px;
   z-index: 2;
   display: none;
-  background: url(/assets/galleria/themes/classic/classic-loader.gif) no-repeat 2px 2px;
+  background: url(/assets/galleria/themes/classic/classic-loader-efbcfdb0cb95a77ca8d9dc4f90f3ed2f.gif) no-repeat 2px 2px;
 }
 
 /* line 75, ../../app/assets/stylesheets/_galleria.scss */
@@ -6122,7 +6122,7 @@ abbr[title], abbr[data-original-title] {
 .galleria-info-close,
 .galleria-image-nav-left,
 .galleria-image-nav-right {
-  background-image: url(/assets/galleria/themes/classic/classic-map.png);
+  background-image: url(/assets/galleria/themes/classic/classic-map-573537dc8c2f39b035fd8bd0d15657ab.png);
   background-repeat: no-repeat;
 }
 
@@ -6178,7 +6178,7 @@ a:focus,
   text-shadow: none;
   background-color: transparent;
   border: 0;
-  background: white url(/assets/logo.gif) center center no-repeat;
+  background: white url(/assets/logo-f4fe920cbefa67a013a801ac65a432aa.gif) center center no-repeat;
   background-size: contain;
 }
 
