@@ -1,10 +1,9 @@
-<% @source_images = resource.parent.images if resource && resource.respond_to?(:leaf?) && resource.leaf? %>
-<% @images = resource.parent.images if resource && resource.respond_to?(:leaf?) && resource.leaf? %>
+<% @images = resource.parent.images if action_name == "show" && resource.respond_to?(:leaf?) && resource.leaf? %>
 <% @images ||= site.home.images %>
 <!doctype html>
 <%= render 'html_tag' %>
 <%= render 'head' %>
-<body id='<%= @body_id %>' class="<%= @images.any? ? 'slideshow' : 'noslideshow' %>">
+<body>
 <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
 
 <div id="wrapper-wide-body">

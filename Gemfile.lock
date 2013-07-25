@@ -1,14 +1,28 @@
-GIT
-  remote: git@github.com:jdfdesign/gko_cms3.git
-  revision: d0adca38d67d62c1692b0398fa84852c69537f11
-  tag: v0.6.50.rc2
+PATH
+  remote: ~/Github/gko_cms3/gko_albums
   specs:
     gko_albums (0.6.50.rc2)
+
+PATH
+  remote: ~/Github/gko_cms3/gko_auth
+  specs:
     gko_auth (0.6.50.rc2)
       cancan (~> 1.6.10)
       devise (~> 2.2.3)
+
+PATH
+  remote: ~/Github/gko_cms3/gko_blog
+  specs:
     gko_blog (0.6.50.rc2)
+
+PATH
+  remote: ~/Github/gko_cms3/gko_categories
+  specs:
     gko_categories (0.6.50.rc2)
+
+PATH
+  remote: ~/Github/gko_cms3/gko_core
+  specs:
     gko_core (0.6.50.rc2)
       RedCloth (= 4.2.9)
       activesupport-slices (= 0.0.2)
@@ -52,12 +66,28 @@ GIT
       uglifier (>= 1.0.3)
       uuid (= 2.3.5)
       will_paginate (~> 3.0.2)
+
+PATH
+  remote: ~/Github/gko_cms3/gko_documents
+  specs:
     gko_documents (0.6.50.rc2)
       dragonfly (~> 0.9.8)
       rack-cache (>= 0.5.3)
+
+PATH
+  remote: ~/Github/gko_cms3/gko_image_bank
+  specs:
     gko_image_bank (0.6.50.rc2)
+
+PATH
+  remote: ~/Github/gko_cms3/gko_inquiries
+  specs:
     gko_inquiries (0.6.50.rc2)
       filters_spam (~> 0.2)
+
+PATH
+  remote: ~/Github/gko_cms3/gko_stickers
+  specs:
     gko_stickers (0.6.50.rc2)
 
 GEM
