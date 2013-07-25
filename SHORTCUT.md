@@ -11,8 +11,6 @@ rails s
 cd ~/Github/gko_guanahani_hotel_com
 rails s
 cd ~/Github/gko_guanahani_hotel_com
-RAILS_ENV=production bundle exec rake assets:precompile 
-RAILS_ENV=development bundle exec rake assets:precompile 
 bundle exec rake assets:precompile
 
 cd ~/Github/gko_guanahani_hotel_com

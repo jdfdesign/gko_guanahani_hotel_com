@@ -1,0 +1,14 @@
+<% cache([site, I18n.locale, 'copyright2']) do %>
+ <!-- Copyright
+================================================== -->
+ <div id='copyright-container' class='container-fluid'>
+   <div id='copyright' class='row-fluid'>
+     <div class="span12">
+      <%= render_menu('legal') %>
+      <a id='site-by' href='http://www.joufdesign.com' class="copyright-author" target='_blank'>
+        <%= t(:'site_by', :name => "Jouf Design").html_safe %>
+      </a>
+    </div>
+  </div>
+ </div>
+<% end %>

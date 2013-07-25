@@ -570,10 +570,14 @@ h1.page-title {
 	}
 	#footer {
 		.span3 {
-			min-height: 300px;
+			//min-height: 300px;
 			border-left: 1px solid #fff;
 			padding: 0 20px;
 		}
+	}
+	.awards {
+		min-height: 170px;
+		vertical-align: center;
 	}
 	/*-----------------------------------------
 	 COPYRIGHT

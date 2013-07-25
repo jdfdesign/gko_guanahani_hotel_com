@@ -10,13 +10,13 @@
 <div id="wrapper-wide-body">
 	<header class="container-fluid">
 		<div class='row-fluid'>
-			<% cache [I18n.locale, site,'headline'] do %>
+			<% cache [I18n.locale, site,'headline2'] do %>
 				<% @virtual_tours_page = site.pages.find_by_name("virtual-tours") %>
 				<%= render 'site_title' %>
 				<h4 id="site-subtitle" class="hide-on-mobile"><%= site.subtitle.html_safe if site.subtitle.present? %></h4>
 				<!-- Everything you want hidden at 980px or less, place within here -->
 				<div class="top-btn-bar btn-toolbar pull-right">
-					<div class="btn-group"><%= link_to(t("book_online"), "http://www.globekey.com/reserve.php?hid=SBH9592", :class => "btn btn-large", :target => :blank, :id => "book-online-btn") %></div>
+					<div class="btn-group"><%= link_to(t("book_online"), "http://www.globekey.com/reserve.php?hid=SBH9592&lang=#{I18n.locale.to_s}", :class => "btn btn-large", :target => :blank, :id => "book-online-btn") %></div>
 					<div class="btn-group"><%= link_to(t("virtual_tour"), @virtual_tours_page.public_url, :class => "btn btn-large visible-desktop", :id => "virtual-tours-btn") if @virtual_tours_page %></div>
 					<%= render 'locales_select' %>
 				</div>
@@ -30,7 +30,7 @@
 		<div class='row-fluid'>
 			<div class="span12">
 			<% cache(['slideshow-home', I18n.locale, site]) do %>
-				<%= render("images/slideshow", :images => @images) %>
+				<%= render("images/galleria", :images => @images) %>
 			<% end %>
 			</div>
 	  	</div>
