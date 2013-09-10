@@ -1,4 +1,4 @@
-<%= render_secondary_menu %>
+<%= render "secondary_menu" %>
 <% cache [action_name, I18n.locale, parent.site, parent] do %>
 	<%= render_collection_header %>
 	<% @parent_categories.each do |c| %>

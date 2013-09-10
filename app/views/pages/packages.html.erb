@@ -4,9 +4,9 @@
 	<%
 		sections = begin
 			if resource.children.try(:any?)
-				resource.children
+				resource.children.live
 			else
-				resource.self_and_siblings
+				resource.self_and_siblings.live
 			end
 		end
 	%>
