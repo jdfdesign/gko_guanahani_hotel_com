@@ -7,7 +7,7 @@ group :assets do
 end
 
 group :production do
-  git "git@github.com:jdfdesign/gko_cms3.git", :tag => "v0.6.60.rc5" do
+  git "git@github.com:jdfdesign/gko_cms3.git", :tag => "v0.6.61" do
     gem 'gko_core'
     gem 'gko_auth'
     gem 'gko_albums'
@@ -18,7 +18,6 @@ group :production do
     gem 'gko_blog'
     gem 'gko_stickers'
   end
-  #gem 'newrelic_rpm'
 end
 #group :development do
 #	gem "gko_core", :path => '~/Github/gko_cms3/gko_core'

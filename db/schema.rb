@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130910074910) do
+ActiveRecord::Schema.define(:version => 20131003164621) do
 
   create_table "assets", :force => true do |t|
     t.integer  "site_id"
@@ -143,11 +143,10 @@ ActiveRecord::Schema.define(:version => 20130910074910) do
     t.string   "image_ext"
     t.datetime "created_at",                      :null => false
     t.datetime "updated_at",                      :null => false
-    t.integer  "country_id"
     t.string   "language",           :limit => 5
+    t.string   "country"
   end
 
-  add_index "document_items", ["country_id"], :name => "index_press_articles_on_country_id"
   add_index "document_items", ["section_id"], :name => "index_press_articles_on_section_id"
   add_index "document_items", ["site_id"], :name => "index_press_articles_on_site_id"
 
@@ -426,15 +425,7 @@ ActiveRecord::Schema.define(:version => 20130910074910) do
     t.datetime "created_at",                                  :null => false
     t.datetime "updated_at",                                  :null => false
     t.text     "plugins"
-    t.string   "logo_mime_type"
-    t.string   "logo_name"
-    t.integer  "logo_size"
-    t.integer  "logo_width"
-    t.integer  "logo_height"
-    t.string   "logo_uid"
-    t.string   "logo_ext"
     t.string   "default_image_uid"
-    t.integer  "site_registrations_count", :default => 0
     t.integer  "languages_count",          :default => 0
     t.datetime "liquid_models_updated_at"
     t.text     "page_types"
