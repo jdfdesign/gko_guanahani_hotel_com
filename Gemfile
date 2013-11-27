@@ -29,4 +29,4 @@ group :development do
 	gem "gko_blog", :path => '~/Github/gko_cms3/gko_blog'
 	gem "gko_categories", :path => '~/Github/gko_cms3/gko_categories'
 	gem "gko_stickers", :path => '~/Github/gko_cms3/gko_stickers'
-end    
+end
