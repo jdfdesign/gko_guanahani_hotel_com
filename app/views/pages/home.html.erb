@@ -1,7 +1,40 @@
 <% cache [action_name, I18n.locale, resource.site, resource, "home"] do %>
 	<%= render_html_text(resource.body) %>
 <% end %>
-
+<% if I18n.locale.to_s == 'fr' %>
+<div id="homeModal" class="modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <a class='close' data-dismiss='modal' id="closeHomeModal">&times;</a>    
+    <h3>OFFREZ UN PASS DECOUVERTE</h3>
+  </div>
+  <div class="modal-body">
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <div class="span6">
+          <%= image_tag("popup00.jpg" )%>
+          <h3>PASS demi-journée 190€/pers.</h3>
+          <p>Coupe de Champagne <br/>
+            + déjeuner à l'Indigo (hors boissons et plats signatures)<br/>
+            + soin au spa 1h<br/>
+            + accès et service transat plage</p>
+        </div>
+        <div class="span6">
+          <%= image_tag("popup01.jpg" )%>
+          <h3>PASS Journée 220€</h3>
+          <p>Petit déjeuner + soin au spa 1h + Coupe de Champagne<br/>
+            + déjeuner à l'Indigo (hors boissons et plats signatures)<br/>
+            + accès et service transat plage</p>
+        </div>
+      </div>
+      <div class="row-fluid">
+        <div class="span12">
+          <p><em>Uniquement sur réservation : 0590&nbsp;52&nbsp;90&nbsp;36. Pour de plus amples informations, contacter l’hôtel</em></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<% else %>
 <div id="homeModal" class="modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-header">
     <a class='close' data-dismiss='modal' id="closeHomeModal">&times;</a>    
@@ -34,6 +67,7 @@
     </div>
   </div>
 </div>
+<% end %>
 <% content_for :after_javascript_libraries do %>
 <script type="text/javascript">
 	$(document).ready(function() {
