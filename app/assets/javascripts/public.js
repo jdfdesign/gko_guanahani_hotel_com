@@ -2,12 +2,7 @@
 //= require jquery_ujs
 //= require gko/public/jquery.grid.responsive.js
 //= require gko/public/jquery.bootstrap.navbarhover.js
-//= require twitter.bootstrap.2.0.4/bootstrap/transition.js
-//= require twitter.bootstrap.2.0.4/bootstrap/alert.js
-//= require twitter.bootstrap.2.0.4/bootstrap/button.js
-//= require twitter.bootstrap.2.0.4/bootstrap/collapse.js
-//= require twitter.bootstrap.2.0.4/bootstrap/dropdown.js
-//= require twitter.bootstrap.2.0.4/bootstrap/modal.js
+//= require twitter.bootstrap.2.0.4/bootstrap
 //= require gko/gko.galleria
 $(document).ready(function() {
     f_init_galleria = function() {
@@ -147,10 +142,9 @@ $(document).ready(function() {
 		"' scale='aspect' controller='true' autoplay='false' /></object></div></div>"
 		$(modal).appendTo('body').modal({backdrop:'static', show:true}).bind('hidden', function (e) {
 		    $(this).remove();
-		});;
-		
-		
+		});
 	})
+  
 
 
 	f_init_galleria();
