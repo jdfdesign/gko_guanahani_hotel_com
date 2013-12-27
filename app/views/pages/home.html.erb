@@ -2,66 +2,53 @@
 	<%= render_html_text(resource.body) %>
 <% end %>
 <% if I18n.locale.to_s == 'fr' %>
-<div id="homeModal" class="modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div id="homeModal" class="modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="width: 620px;margin-left: -310px;">
   <div class="modal-header">
     <a class='close' data-dismiss='modal' id="closeHomeModal">&times;</a>    
-    <h3>OFFREZ UN PASS DECOUVERTE</h3>
+    <h3>SÉJOURNEZ 5 NUITS, PAYEZ 4 NUITS</h3>
   </div>
   <div class="modal-body">
     <div class="container-fluid">
       <div class="row-fluid">
-        <div class="span6">
-          <%= image_tag("popup00.jpg" )%>
-          <h3>PASS demi-journée 190€/pers.</h3>
-          <p>Coupe de Champagne <br/>
-            + déjeuner à l'Indigo (hors boissons et plats signatures)<br/>
-            + soin au spa 1h<br/>
-            + accès et service transat plage</p>
-        </div>
-        <div class="span6">
-          <%= image_tag("popup01.jpg" )%>
-          <h3>PASS Journée 220€</h3>
-          <p>Petit déjeuner + soin au spa 1h + Coupe de Champagne<br/>
-            + déjeuner à l'Indigo (hors boissons et plats signatures)<br/>
-            + accès et service transat plage</p>
-        </div>
-      </div>
-      <div class="row-fluid">
         <div class="span12">
-          <p><em>Uniquement sur réservation : 0590&nbsp;52&nbsp;90&nbsp;36. Pour de plus amples informations, contacter l’hôtel</em></p>
+          <%= image_tag("popup00.jpg" )%>
+          <p>Offre valable du 19 au 28 janvier 2014</p>
+<p>A réserver avant le 31 Décembre 2013 directement à l’hôtel à l’adresse suivante: <a href="mailto:reservations@leguanahani.com?subject=package PAY 4 NIGHTS, STAY 5 NIGHTS">reservations@leguanahani.com</a></p>
+<p>Disponible en Chambre vue mer et Suite vue Mer uniquement</p>
+<p>Réservation obligatoire – offre valable selon disponibilité</p>
+<p>Chambre vue mer à 1070 Euros</p>
+<p>Suite vue mer à 1355 Euros</p>
+<p><small>Les tarifs indiqués ci-dessus sont en Euros, sur la base de la chambre double, par nuit et par chambre et comprennent le petit déjeuner, l’accès à notre Spa Clarins, au courts de tennis, au centre de remise en forme, aux sports non-motorisés, les transferts aller-retour pour l’aéroport et port.<br/>
+Supplément de 100 Euros pour la troisième personne. Enfants de 6 ans et moins gratuits dans la chambre des parents.<br/>
+Les tarifs sont sujets à modification sans préavis. La taxe de séjour de 5% est en sus.</small></p>
         </div>
       </div>
     </div>
   </div>
 </div>
 <% else %>
-<div id="homeModal" class="modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div id="homeModal" class="modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="width: 620px;margin-left: -310px;">
   <div class="modal-header">
     <a class='close' data-dismiss='modal' id="closeHomeModal">&times;</a>    
-    <h3>DAY PASS GIFTS «&nbsp;DISCOVER&nbsp;»</h3>
+    <h3>PAY 4 NIGHTS, STAY 5 NIGHTS</h3>
   </div>
   <div class="modal-body">
     <div class="container-fluid">
       <div class="row-fluid">
-        <div class="span6">
-          <%= image_tag("popup00.jpg" )%>
-          <h3>Half-day PASS 190€/pers.</h3>
-          <p>glass of champagne <br/>
-            + lunch at Indigo (beverages and « signature » plates excluded)<br/>
-            + 1h spa treatment<br/>
-            + access to the beach and transat service</p>
-        </div>
-        <div class="span6">
-          <%= image_tag("popup01.jpg" )%>
-          <h3>Day pass 220€/pers.</h3>
-          <p>breakfast + 1h spa treatment + glass of champagne<br/>
-            + lunch at Indigo (beverages and « signature » plates excluded)<br/>
-            + access to the beach and transat service</p>
-        </div>
-      </div>
-      <div class="row-fluid">
         <div class="span12">
-          <p><em>Available only upon reservation : 0590&nbsp;52&nbsp;90&nbsp;36. Contact us for more information.</em></p>
+          <%= image_tag("popup00.jpg" )%>
+          <p>Valid January 19-28 2014</p>
+          <p>Available in the Ocean View Room and Ocean View Suite Category Only</p>
+          <p>Reservations are Required</p>
+          <p>Subject to Availability</p>
+          <p>Daily Rates for This Special Offer</p>
+          <p>Ocean View Room : € 1070</p>
+          <p>Ocean 1 Bedroom Suite : € 1355</p>
+          <p>Reservations can be made directly with property by email : <a href="mailto:reservations@leguanahani.com?subject=package PAY 4 NIGHTS, STAY 5 NIGHTS">reservations@leguanahani.com</a></p>
+<p><small>The above rates are quoted in EURO, are based on single/double occupancy per room per night and are inclusive of daily continental Breakfast in room or full American Breakfast at the Indigo restaurant, access to our Spa Clarins, tennis court and fitness center, non-motorized watersports, roundtrip airport transportations. 
+<br/>An additional guest in the room is 100 € per night. 
+<br/>Children under 6 years old are free of charge. 
+<br/>Rates are subject to modification without notice. Room rates do include the 5 % city tax.</small></p>
         </div>
       </div>
     </div>

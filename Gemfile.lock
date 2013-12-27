@@ -140,7 +140,7 @@ GEM
     gem-patching (0.0.3)
     gherkin (2.9.3)
       json (>= 1.4.6)
-    globalize (3.0.2)
+    globalize (3.0.3)
       activemodel (>= 3.0.0)
       activerecord (>= 3.0.0)
       paper_trail (~> 2)
