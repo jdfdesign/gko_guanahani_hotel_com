@@ -4,6 +4,7 @@ tail -f log/development.log
 cd ~/Github/gko_guanahani_hotel_com
 tail -f log/production.log
 
+rvm use 1.8.7 --default
 cd ~/Github/gko_guanahani_hotel_com
 bundle install
 rails s
